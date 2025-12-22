@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>आदर्श सिरोही - डिजिटल सेवा केंद्र</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #004080; --accent: #f39c12; --bg: #f4f7f6; --wa-green: #25d366; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-bottom: 50px; }
+        
+        header { background: var(--primary); color: white; padding: 40px 5%; text-align: center; }
+        .hero-info { margin-top: 10px; font-size: 1.1rem; }
+
+        .container { max-width: 1100px; margin: auto; padding: 30px 20px; }
+        
+        /* संपर्क बटन स्टाइल */
+        .contact-bar { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+        .contact-btn { padding: 12px 25px; border-radius: 30px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; transition: 0.3s; }
+        .btn-wa { background: var(--wa-green); }
+        .btn-mail { background: #ea4335; }
+        .contact-btn i { margin-right: 10px; font-size: 1.2rem; }
+        .contact-btn:hover { transform: scale(1.05); opacity: 0.9; }
+
+        /* सर्विस ग्रिड */
+        .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+        .service-link { 
+            background: white; padding: 18px; border-radius: 10px; text-decoration: none; 
+            color: var(--primary); font-weight: 600; display: flex; align-items: center; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: 0.3s; border-left: 5px solid var(--accent);
+        }
+        .service-link:hover { background: var(--primary); color: white; transform: translateX(8px); }
+        .service-link i { margin-right: 15px; width: 25px; text-align: center; }
+
+        footer { background: #222; color: #bbb; text-align: center; padding: 30px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>आदर्श सिरोही डिजिटल सेवा केंद्र (CSC)</h1>
+    <div class="hero-info">
+        <p><i class="fas fa-map-marker-alt"></i> सैदपुर, बुलंदशहर (203411)</p>
+        <p><i class="fas fa-graduation-cap"></i> CCC & O-Level Certified [VLE Operator]</p>
+    </div>
+</header>
+
+<div class="container">
+    <div class="contact-bar">
+        <a href="https://wa.me/917300789906" class="contact-btn btn-wa" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp संपर्क
+        </a>
+        <a href="mailto:ascomputers078@gmail.com" class="contact-btn btn-mail">
+            <i class="fas fa-envelope"></i> ईमेल भेजें
+        </a>
+    </div>
+
+    <h2 style="text-align:center; color: var(--primary); margin-bottom:30px;">हमारी 15+ प्रमुख सेवाएं</h2>
+
+    <div class="services-list">
+        <a href="#" class="service-link"><i class="fas fa-fingerprint"></i> 1. आधार नकद निकासी (AePS)</a>
+        <a href="#" class="service-link"><i class="fas fa-exchange-alt"></i> 2. मनी ट्रांसफर (DigiPay)</a>
+        <a href="#" class="service-link"><i class="fas fa-address-card"></i> 3. नया पैन कार्ड / सुधार</a>
+        <a href="#" class="service-link"><i class="fas fa-file-invoice"></i> 4. आय प्रमाण पत्र</a>
+        <a href="#" class="service-link"><i class="fas fa-users"></i> 5. जाति प्रमाण पत्र</a>
+        <a href="#" class="service-link"><i class="fas fa-map-marked-alt"></i> 6. निवास प्रमाण पत्र</a>
+        <a href="#" class="service-link"><i class="fas fa-utensils"></i> 7. नया राशन कार्ड आवेदन</a>
+        <a href="#" class="service-link"><i class="fas fa-notes-medical"></i> 8. आयुष्मान गोल्डन कार्ड</a>
+        <a href="#" class="service-link"><i class="fas fa-hand-holding-heart"></i> 9. पेंशन (वृद्धा/विधवा/विकलांग)</a>
+        <a href="#" class="service-link"><i class="fas fa-file-alt"></i> 10. सरकारी नौकरी ऑनलाइन फॉर्म</a>
+        <a href="#" class="service-link"><i class="fas fa-user-graduate"></i> 11. स्कॉलरशिप (छात्रवृत्ति) फॉर्म</a>
+        <a href="#" class="service-link"><i class="fas fa-lightbulb"></i> 12. बिजली बिल भुगतान</a>
+        <a href="#" class="service-link"><i class="fas fa-id-badge"></i> 13. ड्राइविंग लाइसेंस सेवा</a>
+        <a href="#" class="service-link"><i class="fas fa-passport"></i> 14. पासपोर्ट ऑनलाइन आवेदन</a>
+        <a href="#" class="service-link"><i class="fas fa-keyboard"></i> 15. हिंदी-अंग्रेजी टाइपिंग एवं प्रिंट</a>
+    </div>
+</div>
+
+<footer>
+    <p><b>आदर्श सिरोही - कंप्यूटर प्रोफेशनल</b></p>
+    <p>अनुभव: नवंबर 2022 से स्वतंत्र केंद्र संचालक</p>
+    <p style="margin-top:10px; font-size:0.8rem;">सैदपुर, बुलंदशहर, उत्तर प्रदेश - 203411</p>
+</footer>
+
+</body>
+</html>
