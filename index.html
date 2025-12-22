@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>सिरोही जन सेवा केंद्र - मास्टर पोर्टल</title>
+    
+    <title>सिरोही जन सेवा केंद्र - आदर्श सिरोही | ऑनलाइन फॉर्म और सरकारी सेवाएँ</title>
+    <meta name="description" content="सिरोही जन सेवा केंद्र (संचालक: आदर्श सिरोही)। यहाँ आय, जाति, मूल निवास, पैन कार्ड, शादीशुदा महिला जाति सत्यापन (मायके सत्यापन) और 25+ सरकारी सेवाएँ उपलब्ध हैं।">
+    <meta name="keywords" content="सिरोही जन सेवा केंद्र, आदर्श सिरोही, Sirohi Jan Seva Kendra, शादीशुदा महिला जाति सत्यापन, मायके सत्यापन, ऑनलाइन फॉर्म, पैन कार्ड, आय जाति निवास">
+    <meta name="author" content="आदर्श सिरोही">
+    <link rel="canonical" href="https://yourusername.github.io/sirohi-jan-seva/">
+
     <style>
         :root { --primary: #0a3d62; --secondary: #eb2f06; --accent: #f6b93b; --bg: #f1f2f6; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); margin: 0; padding: 0; color: #2f3542; }
@@ -15,28 +21,28 @@
 
         /* Home Contact Buttons */
         .home-contact-btns { display: flex; justify-content: center; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
-        .h-btn { padding: 10px 18px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .h-btn { padding: 12px 20px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2); }
         .h-btn-call { background: #3498db; }
         .h-btn-wa { background: #25D366; }
         .h-btn-mail { background: #e74c3c; }
-        .h-btn:hover { transform: scale(1.05); }
+        .h-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
         /* Grid Layout */
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
         
         .card { 
             background: #fff; padding: 25px; border-radius: 15px; text-align: center; 
             cursor: pointer; border-bottom: 5px solid var(--primary); transition: 0.3s;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .card:hover { transform: translateY(-8px); border-bottom-color: var(--secondary); }
-        .card strong { font-size: 1.1rem; color: var(--primary); }
+        .card:hover { transform: translateY(-8px); border-bottom-color: var(--secondary); background: #fdfdfd; }
+        .card strong { font-size: 1.15rem; color: var(--primary); }
 
-        /* Modal */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); overflow-y: auto; }
+        /* Modal / Popup */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); overflow-y: auto; padding: 20px 0; }
         .modal-content { 
-            background: #fff; margin: 2% auto; padding: 30px; width: 55%; 
+            background: #fff; margin: auto; padding: 30px; width: 55%; 
             border-radius: 20px; position: relative; animation: zoomIn 0.3s ease;
         }
         @keyframes zoomIn { from {opacity: 0; transform: scale(0.95);} to {opacity: 1; transform: scale(1);} }
@@ -47,15 +53,16 @@
         .doc-section li { padding: 8px 0; border-bottom: 1px solid #eee; font-weight: 500; display: flex; align-items: center; }
         .doc-section li::before { content: "✔"; color: #2ecc71; margin-right: 12px; font-weight: bold; }
 
-        .note-alert { background: #fff5f5; color: #c0392b; padding: 12px; border-radius: 8px; font-weight: bold; border: 1px solid #f5c6cb; font-size: 0.9rem; }
+        .sample-img { width: 100%; border-radius: 10px; border: 1px solid #ddd; margin-bottom: 15px; }
+        .note-alert { background: #fff5f5; color: #c0392b; padding: 12px; border-radius: 8px; font-weight: bold; border: 1px solid #f5c6cb; }
         
         .action-btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 25px; }
-        .btn { padding: 12px 5px; border: none; border-radius: 10px; cursor: pointer; color: #fff; font-weight: bold; text-decoration: none; text-align: center; font-size: 0.85rem; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .btn { padding: 15px 5px; border: none; border-radius: 10px; cursor: pointer; color: #fff; font-weight: bold; text-decoration: none; text-align: center; font-size: 0.9rem; transition: 0.3s; }
         .btn-call { background: #3498db; }
         .btn-wa { background: #25D366; }
         .btn-mail { background: #e74c3c; }
 
-        @media (max-width: 768px) { .modal-content { width: 92%; } .action-btns { grid-template-columns: 1fr; } .home-contact-btns { flex-direction: column; align-items: center; } .h-btn { width: 85%; justify-content: center; } }
+        @media (max-width: 768px) { .modal-content { width: 92%; } .action-btns { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -64,7 +71,7 @@
         <h1 class="center-title">सिरोही जन सेवा केंद्र</h1>
         <div class="operator-name">संचालक: आदर्श सिरोही</div>
         <div class="home-contact-btns">
-            <a href="tel:7300789906" class="h-btn h-btn-call">📞 कॉल करें</a>
+            <a href="tel:7300789906" class="h-btn h-btn-call">📞 कॉल: 7300789906</a>
             <a href="https://wa.me/917300789906" class="h-btn h-btn-wa" target="_blank">💬 व्हाट्सएप</a>
             <a href="mailto:ascomputers078@gmail.com" class="h-btn h-btn-mail">✉️ ईमेल भेजें</a>
         </div>
@@ -77,10 +84,10 @@
     <div id="serviceModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle" style="color:var(--primary); margin:0;">Service Name</h2>
+            <h2 id="modalTitle" style="color:var(--primary); margin:0;">Service</h2>
             <hr style="margin:15px 0; opacity:0.1;">
             
-            <div class="doc-section">
+            <div id="imageContainer"></div> <div class="doc-section">
                 <p style="margin-top:0; font-weight:bold; color:#000;">अनिवार्य दस्तावेज:</p>
                 <ul id="docList"></ul>
             </div>
@@ -88,9 +95,9 @@
             <div id="specialNote" class="note-alert"></div>
             
             <div class="action-btns">
-                <a id="mCallBtn" href="tel:7300789906" class="btn btn-call">📞 कॉल</a>
-                <a id="mWaBtn" href="#" class="btn btn-wa" target="_blank">💬 व्हाट्सएप</a>
-                <a id="mMailBtn" href="#" class="btn btn-mail">✉️ ईमेल</a>
+                <a id="mCallBtn" href="tel:7300789906" class="btn btn-call">कॉल करें</a>
+                <a id="mWaBtn" href="#" class="btn btn-wa" target="_blank">व्हाट्सएप</a>
+                <a id="mMailBtn" href="#" class="btn btn-mail">ईमेल</a>
             </div>
         </div>
     </div>
@@ -99,18 +106,24 @@
 const universalDocs = ["दो पासपोर्ट फोटो", "ईमेल आईडी", "मोबाइल नंबर"];
 
 const services = [
-    { name: "शादीशुदा महिला जाति सत्यापन (मायके सत्यापन)", docs: ["आधार कार्ड (मायके व ससुराल)", "पिता का जाति प्रमाण (अनिवार्य)", "लेखपाल/RI की सत्यापन रिपोर्ट", "शादी का कार्ड"], note: "सत्यापन रिपोर्ट लेखपाल द्वारा मायके पक्ष से होना अनिवार्य है।" },
-    { name: "आय प्रमाण पत्र", docs: ["आधार कार्ड", "प्रधान/पार्षद रिपोर्ट", "स्व-घोषणा पत्र"], note: "प्रधान या पार्षद का लेटर पैड अनिवार्य है।" },
-    { name: "जाति प्रमाण पत्र", docs: ["आधार कार्ड", "पिता का जाति प्रमाण", "पुराना रिकॉर्ड"], note: "पिता पक्ष के साक्ष्य अनिवार्य हैं।" },
+    { 
+        name: "शादीशुदा महिला जाति सत्यापन (मायके सत्यापन)", 
+        docs: ["आधार कार्ड (मायके व ससुराल)", "पिता का जाति प्रमाण (अनिवार्य)", "लेखपाल/राजस्व निरीक्षक (RI) की रिपोर्ट", "तहसीलदार को प्रार्थना पत्र"], 
+        note: "शादीशुदा महिला की जाति का निर्धारण पिता के पक्ष से लेखपाल की आख्या के आधार पर ही होगा।",
+        image: "https://i.ibb.co/3YvN4yC/sample-report.jpg" // अपनी फोटो का असली लिंक यहाँ डालें
+    },
+    { name: "आय प्रमाण पत्र", docs: ["आधार कार्ड", "प्रधान/पार्षद का लेटर पैड", "स्व-घोषणा पत्र"], note: "प्रधान या पार्षद का लेटर पैड अनिवार्य है।" },
+    { name: "जाति प्रमाण पत्र", docs: ["आधार कार्ड", "पिता का जाति प्रमाण"], note: "पिता पक्ष के साक्ष्य अनिवार्य हैं।" },
     { name: "मूल निवास प्रमाण", docs: ["आधार कार्ड", "प्रधान रिपोर्ट", "बिजली बिल/वोटर आईडी"], note: "15 वर्ष का निवास रिकॉर्ड जरूरी है।" },
     { name: "नया पैन कार्ड", docs: ["आधार कार्ड", "पिता का नाम स्पष्ट"], note: "पैन पर केवल पिता का नाम आता है।" },
-    { name: "पैन कार्ड सुधार", docs: ["पुराना पैन", "आधार", "सुधार का साक्ष्य"], note: "वही दस्तावेज दें जो सुधारना है।" },
+    { name: "पैन कार्ड सुधार", docs: ["पुराना पैन", "आधार", "सुधार का साक्ष्य"], note: "दस्तावेज पर नाम आवेदन से मैच होना चाहिए।" },
+    { name: "आधार अपडेट", docs: ["आधार कार्ड", "सुधार हेतु वैध आईडी", "लिंक मोबाइल"], note: "OTP के लिए मोबाइल पास होना जरूरी है।" },
     { name: "वोटर आईडी (नया)", docs: ["आधार कार्ड", "फोटो", "आयु प्रमाण"], note: "आयु 18 वर्ष पूर्ण होनी चाहिए।" },
     { name: "आयुष्मान कार्ड", docs: ["राशन कार्ड", "आधार कार्ड"], note: "नाम पात्रता सूची में होना जरूरी है।" },
     { name: "नया राशन कार्ड", docs: ["परिवार ग्रुप फोटो", "सभी का आधार", "बैंक पासबुक"], note: "महिला मुखिया के नाम से आवेदन होगा।" },
     { name: "ड्राइविंग लाइसेंस", docs: ["आधार", "लर्निंग लाइसेंस", "मेडिकल Form 1A"], note: "लर्निंग के 30 दिन बाद पक्का लाइसेंस बनेगा।" },
     { name: "पासपोर्ट सेवा", docs: ["आधार कार्ड", "10वीं मार्कशीट", "एड्रेस प्रूफ"], note: "पुलिस वेरिफिकेशन अनिवार्य है।" },
-    { name: "ई-श्रम कार्ड", docs: ["आधार", "बैंक पासबुक"], note: "मजदूर वर्ग के लिए।" },
+    { name: "ई-श्रम कार्ड", docs: ["आधार", "बैंक पासबुक"], note: "असंगठित मजदूरों के लिए।" },
     { name: "PM-Kisan", docs: ["खतौनी", "आधार", "बैंक पासबुक"], note: "जमीन आवेदक के नाम होनी चाहिए।" },
     { name: "विवाह पंजीकरण", docs: ["शादी कार्ड", "पति-पत्नी आधार", "गवाह आईडी"], note: "शादी के फोटो अनिवार्य हैं।" },
     { name: "जन्म प्रमाण पत्र", docs: ["हॉस्पिटल रसीद", "माता-पिता आधार"], note: "21 दिन के भीतर आवेदन फ्री है।" },
@@ -123,7 +136,7 @@ const services = [
     { name: "उज्ज्वला गैस", docs: ["BPL राशन कार्ड", "आधार", "बैंक पासबुक"], note: "गरीब परिवार की महिलाओं हेतु।" },
     { name: "MSME/उद्यम आधार", docs: ["आधार", "पैन कार्ड", "बैंक खाता"], note: "बिजनेस रजिस्ट्रेशन हेतु।" },
     { name: "Scholarship", docs: ["मार्कशीट", "आय/जाति/निवास", "फीस रसीद"], note: "बैंक खाता आधार सीडेड हो।" },
-    { name: "बिजली कनेक्शन", docs: ["आधार", "जमीन कागज", "पड़ोसी बिल"], note: "ऑनलाइन मीटर आवेदन।" }
+    { name: "नया बिजली कनेक्शन", docs: ["आधार", "जमीन कागज", "पड़ोसी बिल"], note: "ऑनलाइन मीटर आवेदन।" }
 ];
 
 const grid = document.getElementById('service-grid');
@@ -140,6 +153,15 @@ function openModal(service) {
     const allDocs = [...service.docs, ...universalDocs];
     document.getElementById('docList').innerHTML = allDocs.map(d => `<li>${d}</li>`).join('');
     document.getElementById('specialNote').innerHTML = "💡 निर्देश: " + service.note;
+    
+    // इमेज दिखाने का लॉजिक
+    const imgDiv = document.getElementById('imageContainer');
+    if(service.image) {
+        imgDiv.innerHTML = `<img src="${service.image}" class="sample-img" alt="नमूना">`;
+    } else {
+        imgDiv.innerHTML = "";
+    }
+
     const rawMsg = `*सिरोही जन सेवा केंद्र*\n*सेवा:* ${service.name}\n\n*दस्तावेज:*\n- ${allDocs.join('\n- ')}\n\n*संपर्क:* 7300789906`;
     document.getElementById('mWaBtn').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(rawMsg)}`;
     document.getElementById('mMailBtn').href = `mailto:ascomputers078@gmail.com?subject=${service.name}&body=${rawMsg.replace(/\*/g, '')}`;
