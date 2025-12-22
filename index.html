@@ -3,84 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>आदर्श सिरोही - डिजिटल सेवा केंद्र</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>सिरोही जन सेवा केंद्र - मास्टर पोर्टल</title>
     <style>
-        :root { --primary: #004080; --accent: #f39c12; --bg: #f4f7f6; --wa-green: #25d366; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding-bottom: 50px; }
+        :root { --primary: #0a3d62; --secondary: #eb2f06; --accent: #f6b93b; --bg: #f1f2f6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); margin: 0; padding: 0; color: #2f3542; }
         
-        header { background: var(--primary); color: white; padding: 40px 5%; text-align: center; }
-        .hero-info { margin-top: 10px; font-size: 1.1rem; }
+        /* Header */
+        .main-header { background: var(--primary); color: #fff; padding: 30px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .center-title { font-size: 2.2rem; margin: 0; letter-spacing: 1px; }
+        .operator-name { font-size: 1.2rem; color: var(--accent); margin-top: 5px; font-weight: bold; }
 
-        .container { max-width: 1100px; margin: auto; padding: 30px 20px; }
+        /* Home Contact Buttons */
+        .home-contact-btns { display: flex; justify-content: center; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+        .h-btn { padding: 10px 18px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .h-btn-call { background: #3498db; }
+        .h-btn-wa { background: #25D366; }
+        .h-btn-mail { background: #e74c3c; }
+        .h-btn:hover { transform: scale(1.05); }
+
+        /* Grid Layout */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
         
-        /* संपर्क बटन स्टाइल */
-        .contact-bar { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
-        .contact-btn { padding: 12px 25px; border-radius: 30px; text-decoration: none; color: white; font-weight: bold; display: flex; align-items: center; transition: 0.3s; }
-        .btn-wa { background: var(--wa-green); }
-        .btn-mail { background: #ea4335; }
-        .contact-btn i { margin-right: 10px; font-size: 1.2rem; }
-        .contact-btn:hover { transform: scale(1.05); opacity: 0.9; }
-
-        /* सर्विस ग्रिड */
-        .services-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .service-link { 
-            background: white; padding: 18px; border-radius: 10px; text-decoration: none; 
-            color: var(--primary); font-weight: 600; display: flex; align-items: center; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: 0.3s; border-left: 5px solid var(--accent);
+        .card { 
+            background: #fff; padding: 25px; border-radius: 15px; text-align: center; 
+            cursor: pointer; border-bottom: 5px solid var(--primary); transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
-        .service-link:hover { background: var(--primary); color: white; transform: translateX(8px); }
-        .service-link i { margin-right: 15px; width: 25px; text-align: center; }
+        .card:hover { transform: translateY(-8px); border-bottom-color: var(--secondary); }
+        .card strong { font-size: 1.1rem; color: var(--primary); }
 
-        footer { background: #222; color: #bbb; text-align: center; padding: 30px; margin-top: 50px; }
+        /* Modal */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); overflow-y: auto; }
+        .modal-content { 
+            background: #fff; margin: 2% auto; padding: 30px; width: 55%; 
+            border-radius: 20px; position: relative; animation: zoomIn 0.3s ease;
+        }
+        @keyframes zoomIn { from {opacity: 0; transform: scale(0.95);} to {opacity: 1; transform: scale(1);} }
+        .close { position: absolute; right: 25px; top: 15px; font-size: 35px; cursor: pointer; color: #888; }
+
+        .doc-section { background: #fdfaf0; padding: 20px; border-radius: 12px; border-left: 6px solid var(--accent); margin: 15px 0; }
+        .doc-section ul { list-style: none; padding: 0; }
+        .doc-section li { padding: 8px 0; border-bottom: 1px solid #eee; font-weight: 500; display: flex; align-items: center; }
+        .doc-section li::before { content: "✔"; color: #2ecc71; margin-right: 12px; font-weight: bold; }
+
+        .note-alert { background: #fff5f5; color: #c0392b; padding: 12px; border-radius: 8px; font-weight: bold; border: 1px solid #f5c6cb; font-size: 0.9rem; }
+        
+        .action-btns { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 25px; }
+        .btn { padding: 12px 5px; border: none; border-radius: 10px; cursor: pointer; color: #fff; font-weight: bold; text-decoration: none; text-align: center; font-size: 0.85rem; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .btn-call { background: #3498db; }
+        .btn-wa { background: #25D366; }
+        .btn-mail { background: #e74c3c; }
+
+        @media (max-width: 768px) { .modal-content { width: 92%; } .action-btns { grid-template-columns: 1fr; } .home-contact-btns { flex-direction: column; align-items: center; } .h-btn { width: 85%; justify-content: center; } }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>आदर्श सिरोही डिजिटल सेवा केंद्र (CSC)</h1>
-    <div class="hero-info">
-        <p><i class="fas fa-map-marker-alt"></i> सैदपुर, बुलंदशहर (203411)</p>
-        <p><i class="fas fa-graduation-cap"></i> CCC & O-Level Certified [VLE Operator]</p>
-    </div>
-</header>
+    <header class="main-header">
+        <h1 class="center-title">सिरोही जन सेवा केंद्र</h1>
+        <div class="operator-name">संचालक: आदर्श सिरोही</div>
+        <div class="home-contact-btns">
+            <a href="tel:7300789906" class="h-btn h-btn-call">📞 कॉल करें</a>
+            <a href="https://wa.me/917300789906" class="h-btn h-btn-wa" target="_blank">💬 व्हाट्सएप</a>
+            <a href="mailto:ascomputers078@gmail.com" class="h-btn h-btn-mail">✉️ ईमेल भेजें</a>
+        </div>
+    </header>
 
-<div class="container">
-    <div class="contact-bar">
-        <a href="https://wa.me/917300789906" class="contact-btn btn-wa" target="_blank">
-            <i class="fab fa-whatsapp"></i> WhatsApp संपर्क
-        </a>
-        <a href="mailto:ascomputers078@gmail.com" class="contact-btn btn-mail">
-            <i class="fas fa-envelope"></i> ईमेल भेजें
-        </a>
+    <div class="container">
+        <div class="grid" id="service-grid"></div>
     </div>
 
-    <h2 style="text-align:center; color: var(--primary); margin-bottom:30px;">हमारी 15+ प्रमुख सेवाएं</h2>
+    <div id="serviceModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle" style="color:var(--primary); margin:0;">Service Name</h2>
+            <hr style="margin:15px 0; opacity:0.1;">
+            
+            <div class="doc-section">
+                <p style="margin-top:0; font-weight:bold; color:#000;">अनिवार्य दस्तावेज:</p>
+                <ul id="docList"></ul>
+            </div>
 
-    <div class="services-list">
-        <a href="#" class="service-link"><i class="fas fa-fingerprint"></i> 1. आधार नकद निकासी (AePS)</a>
-        <a href="#" class="service-link"><i class="fas fa-exchange-alt"></i> 2. मनी ट्रांसफर (DigiPay)</a>
-        <a href="https://ascomputers078-glitch.github.io/pan-card/" class="service-link"><i class="fas fa-address-card"></i> 3. नया पैन कार्ड / सुधार</a>
-        <a href="#" class="service-link"><i class="fas fa-file-invoice"></i> 4. आय प्रमाण पत्र</a>
-        <a href="#" class="service-link"><i class="fas fa-users"></i> 5. जाति प्रमाण पत्र</a>
-        <a href="#" class="service-link"><i class="fas fa-map-marked-alt"></i> 6. निवास प्रमाण पत्र</a>
-        <a href="#" class="service-link"><i class="fas fa-utensils"></i> 7. नया राशन कार्ड आवेदन</a>
-        <a href="#" class="service-link"><i class="fas fa-notes-medical"></i> 8. आयुष्मान गोल्डन कार्ड</a>
-        <a href="#" class="service-link"><i class="fas fa-hand-holding-heart"></i> 9. पेंशन (वृद्धा/विधवा/विकलांग)</a>
-        <a href="#" class="service-link"><i class="fas fa-file-alt"></i> 10. सरकारी नौकरी ऑनलाइन फॉर्म</a>
-        <a href="#" class="service-link"><i class="fas fa-user-graduate"></i> 11. स्कॉलरशिप (छात्रवृत्ति) फॉर्म</a>
-        <a href="#" class="service-link"><i class="fas fa-lightbulb"></i> 12. बिजली बिल भुगतान</a>
-        <a href="#" class="service-link"><i class="fas fa-id-badge"></i> 13. ड्राइविंग लाइसेंस सेवा</a>
-        <a href="#" class="service-link"><i class="fas fa-passport"></i> 14. पासपोर्ट ऑनलाइन आवेदन</a>
-        <a href="#" class="service-link"><i class="fas fa-keyboard"></i> 15. हिंदी-अंग्रेजी टाइपिंग एवं प्रिंट</a>
+            <div id="specialNote" class="note-alert"></div>
+            
+            <div class="action-btns">
+                <a id="mCallBtn" href="tel:7300789906" class="btn btn-call">📞 कॉल</a>
+                <a id="mWaBtn" href="#" class="btn btn-wa" target="_blank">💬 व्हाट्सएप</a>
+                <a id="mMailBtn" href="#" class="btn btn-mail">✉️ ईमेल</a>
+            </div>
+        </div>
     </div>
-</div>
 
-<footer>
-    <p><b>आदर्श सिरोही - कंप्यूटर प्रोफेशनल</b></p>
-    <p>अनुभव: नवंबर 2022 से स्वतंत्र केंद्र संचालक</p>
-    <p style="margin-top:10px; font-size:0.8rem;">सैदपुर, बुलंदशहर, उत्तर प्रदेश - 203411</p>
-</footer>
+<script>
+const universalDocs = ["दो पासपोर्ट फोटो", "ईमेल आईडी", "मोबाइल नंबर"];
 
+const services = [
+    { name: "शादीशुदा महिला जाति सत्यापन (मायके सत्यापन)", docs: ["आधार कार्ड (मायके व ससुराल)", "पिता का जाति प्रमाण (अनिवार्य)", "लेखपाल/RI की सत्यापन रिपोर्ट", "शादी का कार्ड"], note: "सत्यापन रिपोर्ट लेखपाल द्वारा मायके पक्ष से होना अनिवार्य है।" },
+    { name: "आय प्रमाण पत्र", docs: ["आधार कार्ड", "प्रधान/पार्षद रिपोर्ट", "स्व-घोषणा पत्र"], note: "प्रधान या पार्षद का लेटर पैड अनिवार्य है।" },
+    { name: "जाति प्रमाण पत्र", docs: ["आधार कार्ड", "पिता का जाति प्रमाण", "पुराना रिकॉर्ड"], note: "पिता पक्ष के साक्ष्य अनिवार्य हैं।" },
+    { name: "मूल निवास प्रमाण", docs: ["आधार कार्ड", "प्रधान रिपोर्ट", "बिजली बिल/वोटर आईडी"], note: "15 वर्ष का निवास रिकॉर्ड जरूरी है।" },
+    { name: "नया पैन कार्ड", docs: ["आधार कार्ड", "पिता का नाम स्पष्ट"], note: "पैन पर केवल पिता का नाम आता है।" },
+    { name: "पैन कार्ड सुधार", docs: ["पुराना पैन", "आधार", "सुधार का साक्ष्य"], note: "वही दस्तावेज दें जो सुधारना है।" },
+    { name: "वोटर आईडी (नया)", docs: ["आधार कार्ड", "फोटो", "आयु प्रमाण"], note: "आयु 18 वर्ष पूर्ण होनी चाहिए।" },
+    { name: "आयुष्मान कार्ड", docs: ["राशन कार्ड", "आधार कार्ड"], note: "नाम पात्रता सूची में होना जरूरी है।" },
+    { name: "नया राशन कार्ड", docs: ["परिवार ग्रुप फोटो", "सभी का आधार", "बैंक पासबुक"], note: "महिला मुखिया के नाम से आवेदन होगा।" },
+    { name: "ड्राइविंग लाइसेंस", docs: ["आधार", "लर्निंग लाइसेंस", "मेडिकल Form 1A"], note: "लर्निंग के 30 दिन बाद पक्का लाइसेंस बनेगा।" },
+    { name: "पासपोर्ट सेवा", docs: ["आधार कार्ड", "10वीं मार्कशीट", "एड्रेस प्रूफ"], note: "पुलिस वेरिफिकेशन अनिवार्य है।" },
+    { name: "ई-श्रम कार्ड", docs: ["आधार", "बैंक पासबुक"], note: "मजदूर वर्ग के लिए।" },
+    { name: "PM-Kisan", docs: ["खतौनी", "आधार", "बैंक पासबुक"], note: "जमीन आवेदक के नाम होनी चाहिए।" },
+    { name: "विवाह पंजीकरण", docs: ["शादी कार्ड", "पति-पत्नी आधार", "गवाह आईडी"], note: "शादी के फोटो अनिवार्य हैं।" },
+    { name: "जन्म प्रमाण पत्र", docs: ["हॉस्पिटल रसीद", "माता-पिता आधार"], note: "21 दिन के भीतर आवेदन फ्री है।" },
+    { name: "मृत्यु प्रमाण पत्र", docs: ["श्मशान रसीद", "मृतक आधार", "आवेदक आईडी"], note: "मृत्यु के स्थान का विवरण दें।" },
+    { name: "वृद्धावस्था पेंशन", docs: ["आधार", "बैंक पासबुक", "आय प्रमाण"], note: "आयु 60 वर्ष से अधिक हो।" },
+    { name: "लेबर कार्ड (BOCW)", docs: ["आधार", "कार्य प्रमाण", "बैंक पासबुक"], note: "निर्माण श्रमिकों हेतु।" },
+    { name: "चरित्र प्रमाण पत्र", docs: ["आधार", "फोटो", "प्रधान चरित्र प्रमाण"], note: "पुलिस रिपोर्ट के बाद जारी होगा।" },
+    { name: "विकलांगता (UDID)", docs: ["मेडिकल रिपोर्ट", "आधार", "फोटो"], note: "दिव्यांगता 40% से अधिक हो।" },
+    { name: "PF Withdrawal", docs: ["UAN नंबर", "बैंक पासबुक", "पैन कार्ड"], note: "मोबाइल नंबर आधार से लिंक हो।" },
+    { name: "उज्ज्वला गैस", docs: ["BPL राशन कार्ड", "आधार", "बैंक पासबुक"], note: "गरीब परिवार की महिलाओं हेतु।" },
+    { name: "MSME/उद्यम आधार", docs: ["आधार", "पैन कार्ड", "बैंक खाता"], note: "बिजनेस रजिस्ट्रेशन हेतु।" },
+    { name: "Scholarship", docs: ["मार्कशीट", "आय/जाति/निवास", "फीस रसीद"], note: "बैंक खाता आधार सीडेड हो।" },
+    { name: "बिजली कनेक्शन", docs: ["आधार", "जमीन कागज", "पड़ोसी बिल"], note: "ऑनलाइन मीटर आवेदन।" }
+];
+
+const grid = document.getElementById('service-grid');
+services.forEach((s, idx) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `<strong>${idx+1}. ${s.name}</strong>`;
+    card.onclick = () => openModal(s);
+    grid.appendChild(card);
+});
+
+function openModal(service) {
+    document.getElementById('modalTitle').innerText = service.name;
+    const allDocs = [...service.docs, ...universalDocs];
+    document.getElementById('docList').innerHTML = allDocs.map(d => `<li>${d}</li>`).join('');
+    document.getElementById('specialNote').innerHTML = "💡 निर्देश: " + service.note;
+    const rawMsg = `*सिरोही जन सेवा केंद्र*\n*सेवा:* ${service.name}\n\n*दस्तावेज:*\n- ${allDocs.join('\n- ')}\n\n*संपर्क:* 7300789906`;
+    document.getElementById('mWaBtn').href = `https://api.whatsapp.com/send?text=${encodeURIComponent(rawMsg)}`;
+    document.getElementById('mMailBtn').href = `mailto:ascomputers078@gmail.com?subject=${service.name}&body=${rawMsg.replace(/\*/g, '')}`;
+    document.getElementById('serviceModal').style.display = "block";
+}
+
+function closeModal() { document.getElementById('serviceModal').style.display = "none"; }
+window.onclick = function(e) { if (e.target == document.getElementById('serviceModal')) closeModal(); }
+</script>
 </body>
 </html>
