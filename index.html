@@ -3,317 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>सिरोही जन सेवा केंद्र - सैदपुर (बुलंदशहर) | 7300789906</title>
+    <title>सिरोही जन सेवा केंद्र - सैदपुर | 7300789906</title>
     <style>
-        :root { --primary: #0a3d62; --secondary: #eb2f06; --accent: #f6b93b; --bg: #f4f7f6; --wa: #25D366; --call: #3498db; --footer: #1e272e; }
+        :root { --primary: #0a3d62; --secondary: #eb2f06; --accent: #f6b93b; --bg: #f4f7f6; --wa: #25D366; --call: #3498db; }
         body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); margin: 0; padding: 0; }
         
-        .top-gov-bar { background: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ddd; flex-wrap: wrap; }
-        .logo-text { font-weight: 800; font-size: 1.1rem; }
-        .logo-text span { color: #ff9933; } .logo-text b { color: #138808; }
-
-        .main-header { background: linear-gradient(135deg, var(--primary), #1e3799); color: #fff; padding: 35px 20px; text-align: center; }
-        .moving-text { background: #fffae6; color: #d63031; padding: 8px 0; font-weight: bold; font-size: 0.9rem; border-bottom: 1px solid #ffeaa7; }
-
-        .home-contact-btns { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-top: 15px; }
-        .contact-row { display: flex; gap: 12px; }
-        .h-btn { padding: 12px 25px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        .h-btn-call { background: var(--call); }
-        .h-btn-wa { background: var(--wa); }
-        .h-btn-map { background: #db4437; border: 2px solid #fff; }
-
-        .search-container { max-width: 700px; margin: 30px auto; padding: 0 20px; }
-        .search-bar { width: 100%; padding: 15px 25px; border-radius: 8px; border: 2px solid var(--primary); font-size: 1rem; outline: none; box-sizing: border-box; }
-
-        .container { max-width: 1250px; margin: auto; padding: 0 20px 50px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+        /* Govt Top Bar */
+        .top-gov-bar { background: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ddd; }
+        .logo-text { font-weight: 800; font-size: 1.1rem; } .logo-text b { color: #138808; }
+        .main-header { background: linear-gradient(135deg, var(--primary), #1e3799); color: #fff; padding: 30px 20px; text-align: center; }
         
+        /* Buttons */
+        .h-btn { padding: 12px 25px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.2); cursor: pointer; border: none; }
+        .h-btn-call { background: var(--call); } .h-btn-wa { background: var(--wa); } .h-btn-map { background: #db4437; border: 2px solid #fff; }
+
+        .container { max-width: 1250px; margin: auto; padding: 20px 20px 50px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
         .card { background: #fff; padding: 25px; border-radius: 8px; text-align: left; cursor: pointer; border-top: 4px solid var(--primary); transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .card:hover { transform: translateY(-5px); border-top-color: var(--secondary); }
-        .card .dept-name { color: #0288d1; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; margin-bottom: 5px; display: block; }
-        .card strong { display: block; color: var(--primary); font-size: 1.15rem; }
+        .card.resume-card { background: #fffcf0; border-top-color: #f39c12; }
+        .card strong { display: block; color: var(--primary); font-size: 1.1rem; margin-top: 5px; }
 
+        /* Modal Settings */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); overflow-y: auto; padding: 20px 0; }
-        .modal-content { background: #fff; margin: auto; padding: 30px; width: 75%; max-width: 850px; border-radius: 12px; position: relative; animation: zoomIn 0.3s ease; }
+        .modal-content { background: #fff; margin: auto; padding: 30px; width: 90%; max-width: 950px; border-radius: 12px; position: relative; }
         .close { position: absolute; right: 20px; top: 10px; font-size: 35px; cursor: pointer; color: #888; }
         
-        .doc-section { background: #fdfaf0; padding: 20px; border-radius: 8px; border: 1px solid #f1e4b8; margin: 15px 0; }
-        .doc-section h4 { margin: 0 0 10px 0; color: var(--primary); border-bottom: 2px solid var(--accent); display: inline-block; }
-        .doc-section li { padding: 8px 0; border-bottom: 1px dashed #ccc; list-style: none; font-weight: 500; font-size: 0.95rem; }
-        .doc-section li::before { content: "✅ "; }
+        /* Resume Form Advanced */
+        .form-title { background: #eee; padding: 10px; border-left: 5px solid var(--primary); margin: 20px 0 10px; font-weight: bold; }
+        .row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+        .col { flex: 1; min-width: 200px; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .badge { background: #e3f2fd; padding: 5px 12px; border-radius: 15px; display: inline-block; margin: 3px; font-size: 0.85rem; border: 1px solid #bbdefb; }
+        .hidden-input { display: none; margin-top: 5px; border: 1px solid var(--call); }
 
-        .sub-service-tag { display: inline-block; background: #e8f4fd; color: #1a508b; padding: 5px 10px; margin: 4px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; border: 1px solid #d1e9fb; }
-        .main-footer { background: var(--footer); color: #bdc3c7; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        
-        @keyframes zoomIn { from {opacity: 0; transform: scale(0.95);} to {opacity: 1; transform: scale(1);} }
-        @media (max-width: 768px) { .modal-content { width: 92%; } }
+        /* Print Logic (A4 Size) */
+        #resume-print-view { display: none; }
+        @media print {
+            body * { display: none !important; }
+            #resume-print-view, #resume-print-view * { display: block !important; }
+            #resume-print-view { position: absolute; left: 0; top: 0; width: 100%; font-family: 'Times New Roman', serif; padding: 0; margin: 0; background: white; }
+            .res-head { background: #f0f0f0 !important; padding: 5px 10px; font-weight: bold; border-left: 5px solid #000; margin: 15px 0 5px; text-transform: uppercase; font-size: 14px; -webkit-print-color-adjust: exact; }
+        }
     </style>
 </head>
 <body>
 
     <div class="top-gov-bar">
         <div class="logo-text">डिजिटल<span>●</span>इण्डिया<b>●</b></div>
-        <div style="color:#1a508b; font-weight:900;">CSC DIGITAL SEVA</div>
-        <div style="font-weight: bold; color: #2d3436;">E-DISTRICT UP</div>
+        <div style="font-weight: 800; color: var(--primary);">CSC डिजिटल सेवा | सैदपुर बुलंदशहर</div>
     </div>
-
-    <marquee class="moving-text">सैदपुर का नंबर 1 सेवा केंद्र | नवंबर 2022 से निरंतर सेवा में | सभी सरकारी ऑनलाइन फॉर्म हेतु संपर्क करें: 7300789906</marquee>
 
     <header class="main-header">
         <h1>सिरोही जन सेवा केंद्र</h1>
-        <div style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">संचालक: आदर्श सिरोही</div>
-        
-        <div class="home-contact-btns">
-            <div class="contact-row">
-                <a href="tel:7300789906" class="h-btn h-btn-call">📞 कॉल करें</a>
-                <a href="https://wa.me/917300789906" class="h-btn h-btn-wa" target="_blank">💬 व्हाट्सएप</a>
-            </div>
-            <a href="https://maps.app.goo.gl/c7vcHvTKiBFpjtNXA" target="_blank" class="h-btn h-btn-map">📍 लाइव लोकेशन (Google Map)</a>
+        <div style="color: var(--accent); font-weight: bold;">संचालक: आदर्श सिरोही | 7300789906</div>
+        <div style="margin-top:15px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+            <a href="tel:7300789906" class="h-btn h-btn-call">📞 कॉल</a>
+            <a href="https://wa.me/917300789906" class="h-btn h-btn-wa" target="_blank">💬 व्हाट्सएप</a>
+            <a href="https://maps.app.goo.gl/c7vcHvTKiBFpjtNXA" target="_blank" class="h-btn h-btn-map">📍 मैप लोकेशन</a>
         </div>
     </header>
 
-    <div class="search-container">
-        <input type="text" id="searchBar" class="search-bar" placeholder="सेवा का नाम सर्च करें (जैसे: आय, पैन, राशन, नौकरी...)" onkeyup="filterServices()">
-    </div>
-
     <div class="container">
-        <div class="grid" id="service-grid"></div>
+        <div class="grid" id="service-grid">
+            <div class="card resume-card" onclick="openResumeBuilder()">
+                <span style="color:#e67e22; font-weight:bold;">#1 | PROFESSIONAL TOOL</span>
+                <strong>प्रोफेशनल रिज्यूम मेकर</strong>
+                <small>ऑब्जेक्टिव, एक्सपीरियंस और फोटो के साथ</small>
+            </div>
+        </div>
     </div>
 
-    <footer class="main-footer">
-        <p>📍 ग्राम - सैदपुर, जिला - बुलंदशहर (उत्तर प्रदेश) | 🗓️ नवंबर 2022 से सेवा में</p>
-        <p>© 2022 - 2025 सिरोही जन सेवा केंद्र | सर्वाधिकार सुरक्षित</p>
-    </footer>
+    <div id="resumeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('resumeModal')">×</span>
+            <h2 style="text-align: center; color: #0a3d62;">Modern Resume Builder</h2>
+            
+            <div class="form-title">1. Personal Information</div>
+            <div class="row">
+                <div class="col"><label>पूरा नाम</label><input type="text" id="rName" placeholder="AADARSH SIROHI"></div>
+                <div class="col"><label>पिता का नाम</label><input type="text" id="rFather"></div>
+                <div class="col"><label>फोटो अपलोड</label><input type="file" id="rPhoto" accept="image/*"></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>जन्म तिथि</label><input type="date" id="rDOB"></div>
+                <div class="col"><label>मोबाइल नंबर</label><input type="text" id="rPhone"></div>
+                <div class="col"><label>ईमेल (Optional)</label><input type="email" id="rEmail"></div>
+            </div>
+            <div class="row"><div class="col"><label>पूरा पता</label><input type="text" id="rAddr" placeholder="गांव, पोस्ट, जिला, पिन कोड"></div></div>
+
+            <div class="form-title">2. Objective & Experience</div>
+            <div class="row">
+                <div class="col"><label>करियर उद्देश्य (Objective)</label>
+                <textarea id="rObj" rows="2">To work with an organization where I can utilize my skills and contribute to the growth of the company.</textarea></div>
+            </div>
+            <div class="row">
+                <div class="col"><label>कार्य अनुभव (Work Experience)</label>
+                <textarea id="rExp" rows="2" placeholder="खाली छोड़ने पर Fresher आएगा"></textarea></div>
+            </div>
+
+            <div class="form-title">3. Education & Skills</div>
+            <div class="row">
+                <select id="eCourse" style="flex:1;" onchange="toggleOther(this, 'eOther')">
+                    <option value="">शिक्षा चुनें</option>
+                    <option value="10th (High School)">10th</option>
+                    <option value="12th (Intermediate)">12th</option>
+                    <option value="Graduation">Graduation</option>
+                    <option value="Other">Other...</option>
+                </select>
+                <input type="text" id="eOther" class="hidden-input" placeholder="डिग्री का नाम">
+                <input type="text" id="eBoard" placeholder="बोर्ड" style="flex:1;">
+                <input type="text" id="eYear" placeholder="वर्ष" style="flex:0.5;">
+                <button class="h-btn" style="background:#27ae60; padding:5px 15px;" onclick="addEdu()">Add Edu</button>
+            </div>
+            <div id="eduTags"></div>
+
+            <div class="row">
+                <select style="flex:1;" onchange="handleSelect(this, 'comp')">
+                    <option value="">-- कंप्यूटर कोर्स --</option>
+                    <option value="Basic Computer Course">Basic Computer</option>
+                    <option value="CCC (NIELIT)">CCC</option>
+                    <option value="ADCA">ADCA</option>
+                    <option value="Other">Other...</option>
+                </select>
+                <input type="text" id="cOther" class="hidden-input" placeholder="कोर्स लिखें">
+                <select style="flex:1;" onchange="handleSelect(this, 'skill')">
+                    <option value="">-- मुख्य स्किल्स --</option>
+                    <option value="Typing (Hindi & English)">Typing</option>
+                    <option value="Online Work">Online Work</option>
+                    <option value="Other">Other...</option>
+                </select>
+                <input type="text" id="sOther" class="hidden-input" placeholder="स्किल लिखें">
+            </div>
+            <div id="compTags"></div> <div id="skillTags"></div>
+
+            <div class="form-title">4. Custom Heading</div>
+            <div class="row">
+                <input type="text" id="custH" placeholder="हेडिंग (जैसे: Strength)" class="col">
+                <input type="text" id="custV" placeholder="विवरण" class="col">
+                <button class="h-btn" style="background:var(--call);" onclick="addCustom()">Add</button>
+            </div>
+            <div id="custTags"></div>
+
+            <button onclick="printResume()" style="width:100%; padding:18px; background:#27ae60; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:20px;">प्रिंट रिज्यूम (PDF)</button>
+        </div>
+    </div>
+
+    <div id="resume-print-view">
+        <div style="padding:45px; border:1px solid #000; min-height:285mm; background:#fff;">
+            <div style="display:flex; justify-content:space-between; border-bottom:2px solid #000; padding-bottom:15px;">
+                <div><h1 id="pName" style="margin:0; text-transform:uppercase;"></h1><p id="pContact" style="margin:5px 0;"></p><p id="pAddr" style="margin:0; font-size:14px;"></p></div>
+                <img id="pPhoto" style="width:100px; height:120px; border:1px solid #000; display:none; object-fit:cover;">
+            </div>
+            <div class="res-head">Career Objective</div>
+            <p id="pObj" style="font-size:14px; margin: 5px 10px;"></p>
+            <div class="res-head">Academic Qualification</div>
+            <table style="width:100%; border-collapse:collapse; margin-top:10px;" border="1"><thead style="background:#f2f2f2;"><tr><th>Class</th><th>Board</th><th>Year</th><th>%</th></tr></thead><tbody id="pEduTable" style="text-align:center; font-size:14px;"></tbody></table>
+            <div class="res-head">Work Experience</div>
+            <p id="pExp" style="font-size:14px; margin: 5px 10px;"></p>
+            <div id="pCompSection" style="display:none;"><div class="res-head">Computer Knowledge</div><ul id="pCompList" style="font-size:14px;"></ul></div>
+            <div id="pSkillSection" style="display:none;"><div class="res-head">Key Skills</div><ul id="pSkillList" style="font-size:14px;"></ul></div>
+            <div id="pCustomSection"></div>
+            <div class="res-head">Personal Profile</div>
+            <table style="width:100%; font-size:14px; border:none; line-height:1.8; margin-left:10px;">
+                <tr><td width="150"><strong>Father's Name</strong></td><td>: <span id="ppFather"></span></td></tr>
+                <tr><td><strong>Date of Birth</strong></td><td>: <span id="ppDOB"></span></td></tr>
+                <tr><td><strong>Gender</strong></td><td>: Male | Nationality: Indian</td></tr>
+            </table>
+            <div class="res-head" style="margin-top:30px;">Declaration</div>
+            <p style="font-size:13px; font-style:italic; margin-left:10px;">I hereby declare that all information given above is true to the best of my knowledge.</p>
+            <div style="margin-top:60px; display:flex; justify-content:space-between; padding:0 20px;"><div>Place: ________<br>Date: ________</div><div>___________________<br>(Signature)</div></div>
+        </div>
+    </div>
 
     <div id="serviceModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">×</span>
-            <div style="margin-bottom: 20px;">
-                <span id="modalDept" style="color:#0288d1; font-weight:bold; font-size:0.8rem; text-transform: uppercase;">विभाग</span>
-                <h2 id="modalTitle" style="color:var(--primary); margin:5px 0;">Service Name</h2>
-                <div id="subServiceList" style="margin-top:10px;"></div>
+        <div class="modal-content" style="max-width: 650px;">
+            <span class="close" onclick="closeModal('serviceModal')">×</span>
+            <h2 id="modalTitle" style="color:var(--primary);"></h2>
+            <div style="background:#fdfaf0; padding:15px; border-radius:8px; border:1px solid #f1e4b8; margin:15px 0;">
+                <h4 style="margin-top:0;">ऑफिशियल अनिवार्य दस्तावेज:</h4>
+                <ul id="docListItems" style="line-height:2.2; font-weight:500;"></ul>
             </div>
-
-            <div class="doc-section">
-                <h4>दस्तावेज व आवश्यक विवरण (Checklist)</h4>
-                <ul id="docList"></ul>
-            </div>
-
-            <div id="specialNote" style="background:#fff5f5; color:#c0392b; padding:12px; border-radius:8px; font-weight:bold; font-size:0.9rem; border-left: 5px solid #eb2f06;"></div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 25px;">
-                <a id="mWa" href="#" target="_blank" style="background:var(--wa); color:white; padding:15px; text-align:center; border-radius:8px; text-decoration:none; font-weight:bold;">व्हाट्सएप</a>
-                <a href="tel:7300789906" style="background:var(--call); color:white; padding:15px; text-align:center; border-radius:8px; text-decoration:none; font-weight:bold;">कॉल करें</a>
-            </div>
+            <div id="specialNote" style="background:#fff5f5; color:red; padding:10px; border-radius:5px; font-weight:bold;"></div>
+            <a id="mWa" href="#" target="_blank" class="h-btn h-btn-wa" style="justify-content:center; margin-top:15px;">WhatsApp पर जानकारी लें</a>
         </div>
     </div>
 
 <script>
+// --- FULL OFFICIAL SERVICES DATA (RESTORED) ---
 const services = [
-    { 
-        hi: "आय प्रमाण पत्र", en: "Income Certificate", dept: "राजस्व विभाग (e-District)", 
-        docs: ["आधार कार्ड (Aadhar Card)", "ताजा पासपोर्ट साइज फोटो", "सक्रिय मोबाइल नंबर", "प्रधान/पार्षद की आय रिपोर्ट", "स्व-घोषणा पत्र (भरा हुआ)"], 
-        note: "आय का विवरण परिवार के सभी सदस्यों की कमाई के अनुसार होना चाहिए।" 
-    },
-    { 
-        hi: "जाति प्रमाण पत्र", en: "Caste Certificate", dept: "राजस्व विभाग (e-District)", 
-        docs: ["आधार कार्ड", "पिता का जाति प्रमाण पत्र (साक्ष्य हेतु)", "प्रधान/पार्षद रिपोर्ट", "स्व-घोषणा पत्र", "फोटो", "मोबाइल नंबर"], 
-        note: "विवाहित महिला का जाति प्रमाण पत्र पिता पक्ष के साक्ष्यों से बनेगा।" 
-    },
-    { 
-        hi: "मूल निवास प्रमाण", en: "Domicile Certificate", dept: "राजस्व विभाग (e-District)", 
-        docs: ["आधार कार्ड", "15 वर्ष पुराना निवास रिकॉर्ड (वोटर लिस्ट/TC)", "फोटो", "प्रधान रिपोर्ट", "मोबाइल नंबर"], 
-        note: "निवास हेतु पुराना प्रमाण पत्र या बिजली बिल साथ लाएं।" 
-    },
-    { 
-        hi: "शादीशुदा महिला जाति सत्यापन", en: "Married Woman Caste Verification", dept: "राजस्व विभाग", 
-        docs: ["महिला का आधार (ससुराल)", "पिता का जाति प्रमाण (मायके)", "लेखपाल की आख्या", "शादी का कार्ड", "मोबाइल"], 
-        note: "सत्यापन हेतु पिता के मूल गांव का विवरण देना आवश्यक है।" 
-    },
-    { 
-        hi: "नया राशन कार्ड", en: "New Ration Card", dept: "खाद्य एवं रसद विभाग (UPFCS)", 
-        docs: ["महिला मुखिया की बैंक पासबुक", "परिवार के सभी सदस्यों का आधार", "परिवार की ग्रुप फोटो", "आय प्रमाण पत्र", "गैस कनेक्शन विवरण", "मोबाइल"], 
-        note: "आवेदन केवल महिला मुखिया के नाम से होगा।" 
-    },
-    { 
-        hi: "पैन कार्ड (नया/सुधार)", en: "PAN Card Service", dept: "NSDL/UTI (Income Tax)", 
-        docs: ["आधार कार्ड (Full DOB वाला)", "दो ताजा पासपोर्ट फोटो", "सक्रिय मोबाइल (OTP हेतु)", "पुराना पैन (सुधार हेतु)"], 
-        note: "पैन कार्ड पर केवल पिता का नाम मान्य है।" 
-    },
-    { 
-        hi: "सरकारी नौकरी आवेदन", en: "Sarkari Job Application", dept: "All Central & State Recruitment", 
-        subServices: ["SSC (GD, CGL, CHSL, MTS)", "UP Police (Constable, SI)", "UPSSSC (PET, Lekhpal, VDO)", "UPSC / UPPSC (OTR)", "Railway (RRB/RRC)", "Army/Agniveer", "Banking (IBPS/SBI)", "Teacher (TET/CTET)"],
-        docs: [
-            "सभी मार्कशीट (10th/12th/Graduation)", 
-            "आधार कार्ड व आधार लिंक मोबाइल (OTP हेतु)",
-            "DigiLocker अकाउंट विवरण",
-            "OTR नंबर (One Time Registration)",
-            "ताजा पासपोर्ट फोटो व सिग्नेचर",
-            "जाति व निवास प्रमाण पत्र (नया)",
-            "ईमेल आईडी और उसका एक्टिव पासवर्ड",
-            "PET/TET स्कोर कार्ड (यदि हो)"
-        ], 
-        note: "अधिकतर फॉर्म में DigiLocker और OTR अब अनिवार्य है।" 
-    },
-    { 
-        hi: "पासपोर्ट आवेदन", en: "Passport Service", dept: "विदेश मंत्रालय (MEA)", 
-        docs: ["आधार कार्ड (सटीक विवरण)", "10वीं मार्कशीट (Non-ECR हेतु)", "वोटर आईडी/बैंक पासबुक", "2 स्थानीय गवाहों का विवरण", "मोबाइल"], 
-        note: "पासपोर्ट के लिए 2 गवाह और 1 वर्ष का स्थायी पता जरूरी है।" 
-    },
-    { 
-        hi: "आयुष्मान कार्ड", en: "Ayushman Card", dept: "स्वास्थ्य विभाग", 
-        docs: ["पात्रता वाला राशन कार्ड", "आधार कार्ड", "आधार लिंक मोबाइल"], 
-        note: "60 वर्ष से अधिक के बुजुर्गों और पात्र राशन कार्ड वालों का फ्री बनेगा।" 
-    },
-    { 
-        hi: "छात्रवृत्ति आवेदन", en: "Scholarship Application", dept: "समाज कल्याण विभाग", 
-        subServices: ["Pre-Matric", "Post-Matric", "Graduation"],
-        docs: ["पिछली मार्कशीट", "आय/जाति/निवास प्रमाण", "फीस रसीद", "बैंक पासबुक (आधार लिंक)", "फोटो", "मोबाइल"], 
-        note: "बैंक खाता आधार सीडेड (NCPI) होना अनिवार्य है।" 
-    },
-    { 
-        hi: "ड्राइविंग लाइसेंस", en: "Driving License", dept: "परिवहन विभाग (RTO)", 
-        docs: ["आधार कार्ड", "ब्लड ग्रुप", "फोटो", "लर्निंग डीएल नंबर", "मेडिकल फॉर्म", "मोबाइल"], 
-        note: "लर्निंग के 30 दिन बाद पक्का डीएल आवेदन कर सकते हैं।" 
-    },
-    { 
-        hi: "पीएम किसान", en: "PM Kisan", dept: "कृषि विभाग", 
-        docs: ["ताजा खतौनी", "आधार कार्ड", "बैंक पासबुक", "आधार लिंक मोबाइल"], 
-        note: "ई-केवाईसी और लैंड सीडिंग के बिना पैसा नहीं आएगा।" 
-    },
-    { 
-        hi: "आधार अपडेट", en: "Aadhar Correction", dept: "UIDAI", 
-        docs: ["मूल आधार कार्ड", "पहचान/पते का प्रमाण", "मोबाइल नंबर (अनिवार्य)"], 
-        note: "सुधार हेतु ओरिजिनल दस्तावेज साथ लाएं।" 
-    },
-    { 
-        hi: "विवाह पंजीकरण", en: "Marriage Registration", dept: "पंजीकरण विभाग", 
-        docs: ["पति-पत्नी आधार", "शादी कार्ड व फोटो", "3 गवाहों के आधार", "पंडित/काजी प्रमाण"], 
-        note: "विवाह के बाद सरकारी सर्टिफिकेट हेतु पंजीकरण जरूरी है।" 
-    },
-    { 
-        hi: "वृद्धावस्था पेंशन", en: "Old Age Pension", dept: "समाज कल्याण विभाग", 
-        docs: ["आधार कार्ड", "बैंक पासबुक", "नया आय प्रमाण", "फोटो", "मोबाइल"], 
-        note: "आवेदक की आयु 60 वर्ष पूर्ण होनी चाहिए।" 
-    },
-    { 
-        hi: "जन्म/मृत्यु प्रमाण पत्र", en: "Birth/Death", dept: "नगर पालिका/पंचायत", 
-        docs: ["हॉस्पिटल/श्मशान पर्ची", "आधार कार्ड", "फोटो", "मोबाइल"], 
-        note: "21 दिन के भीतर आवेदन करना सुगम है।" 
-    },
-    { 
-        hi: "वोटर आईडी", en: "Voter Card", dept: "निर्वाचन आयोग", 
-        docs: ["आधार कार्ड", "ताजा फोटो", "आयु का प्रमाण", "मोबाइल"], 
-        note: "18 वर्ष पूर्ण होने पर नया आवेदन करें।" 
-    },
-    { 
-        hi: "ई-श्रम कार्ड", en: "E-Shram", dept: "श्रम मंत्रालय", 
-        docs: ["आधार कार्ड", "बैंक पासबुक", "आधार लिंक मोबाइल"], 
-        note: "असंगठित मजदूरों के लिए सरकारी लाभ।" 
-    },
-    { 
-        hi: "लेबर कार्ड (BOCW)", en: "Labor Card", dept: "UPBOCW", 
-        docs: ["आधार", "बैंक पासबुक", "नियोजन प्रमाण", "फोटो", "परिवार का आधार"], 
-        note: "निर्माण श्रमिकों हेतु सरकारी योजना लाभ।" 
-    },
-    { 
-        hi: "PF निकासी", en: "PF Withdrawal", dept: "EPFO", 
-        docs: ["UAN व पासवर्ड", "चेक/पासबुक फोटो", "आधार", "पैन", "मोबाइल"], 
-        note: "बैंक केवाईसी और मोबाइल लिंक होना जरूरी है।" 
-    },
-    { 
-        hi: "बिजली बिल/कनेक्शन", en: "Electricity Service", dept: "UPPCL", 
-        docs: ["आधार", "जमीन कागज", "फोटो", "मोबाइल", "पड़ोसी बिल"], 
-        note: "नया मीटर आवेदन व बिल सुधार।" 
-    },
-    { 
-        hi: "चरित्र प्रमाण पत्र", en: "Character Certificate", dept: "पुलिस विभाग", 
-        docs: ["आधार", "ताजा फोटो", "प्रधान रिपोर्ट", "मोबाइल"], 
-        note: "पुलिस वेरिफिकेशन के बाद जारी होता है।" 
-    },
-    { 
-        hi: "विकलांगता (UDID)", en: "Disability Card", dept: "दिव्यांग विभाग", 
-        docs: ["सीएमओ मेडिकल रिपोर्ट", "आधार", "फोटो", "मोबाइल"], 
-        note: "40%+ दिव्यांगता अनिवार्य।" 
-    },
-    { 
-        hi: "खतौनी नकल", en: "Land Records", dept: "राजस्व परिषद", 
-        docs: ["गाँव का नाम", "खाता या खसरा संख्या"], 
-        note: "डिजिटल हस्ताक्षरित खतौनी प्राप्त करें।" 
-    },
-    { 
-        hi: "MSME/उद्यम आधार", en: "Udyam Registration", dept: "MSME मंत्रालय", 
-        docs: ["आधार", "पैन", "बैंक विवरण", "मोबाइल"], 
-        note: "दुकान/व्यापार के सरकारी रजिस्ट्रेशन हेतु।" 
-    },
-    { 
-        hi: "शपथ पत्र", en: "Affidavit", dept: "तहसील", 
-        docs: ["आधार", "शपथ का कारण", "मोबाइल"], 
-        note: "नाम सुधार या घोषणा पत्र हेतु।" 
-    },
-    { 
-        hi: "मार्कशीट सुधार", en: "Correction", dept: "शिक्षा बोर्ड", 
-        docs: ["मूल मार्कशीट", "आधार", "शपथ पत्र", "फोटो"], 
-        note: "बोर्ड कार्यालय से संबंधित प्रक्रिया।" 
-    },
-    { 
-        hi: "मृतक आश्रित लाभ", en: "Family Benefit", dept: "समाज कल्याण", 
-        docs: ["मृत्यु प्रमाण", "मृतक आधार", "आश्रित आधार व आय"], 
-        note: "आकस्मिक मृत्यु पर सरकारी आर्थिक सहायता।" 
-    },
-    { 
-        hi: "उज्ज्वला गैस", en: "Ujjwala Gas", dept: "पेट्रोलियम", 
-        docs: ["बीपीएल राशन कार्ड", "सभी आधार", "पासबुक", "फोटो"], 
-        note: "केवल पात्र महिला मुखिया हेतु।" 
-    }
+    { hi: "आय प्रमाण पत्र", dept: "राजस्व विभाग", docs: ["आधार कार्ड (अनिवार्य)", "ताजा पासपोर्ट फोटो", "स्व-घोषणा पत्र (e-District)", "प्रधान/पार्षद आय रिपोर्ट", "राशन कार्ड या बिजली बिल (साक्ष्य हेतु)"], note: "आय का विवरण परिवार के सभी सदस्यों के अनुसार होना चाहिए।" },
+    { hi: "जाति प्रमाण पत्र", dept: "राजस्व विभाग", docs: ["आधार कार्ड", "पिता का जाति प्रमाण पत्र", "स्व-घोषणा पत्र", "प्रधान/पार्षद जाति रिपोर्ट", "फोटो"], note: "विवाहित महिला हेतु जाति प्रमाण पिता पक्ष से ही बनेगा।" },
+    { hi: "मूल निवास प्रमाण", dept: "राजस्व विभाग", docs: ["आधार कार्ड", "15 वर्ष पुराना निवास साक्ष्य (TC/वोटर लिस्ट/पुराना बिल)", "प्रधान रिपोर्ट", "स्व-घोषणा पत्र", "फोटो"], note: "उत्तर प्रदेश का स्थायी निवासी होना अनिवार्य है।" },
+    { hi: "नया राशन कार्ड", dept: "खाद्य विभाग (FCS)", docs: ["महिला मुखिया बैंक पासबुक", "पूरे परिवार के आधार कार्ड", "आय प्रमाण पत्र (नया)", "परिवार ग्रुप फोटो", "गैस कनेक्शन रसीद"], note: "यूनिट्स के नाम आधार कार्ड के अनुसार ही जुड़ेंगे।" },
+    { hi: "पैन कार्ड (नया/सुधार)", dept: "Income Tax", docs: ["आधार कार्ड (पूरी जन्मतिथि वाला)", "2 रंगीन पासपोर्ट फोटो", "आधार लिंक मोबाइल (OTP हेतु)", "ईमेल आईडी"], note: "सुधार हेतु पुराने पैन कार्ड की कॉपी साथ लाएं।" },
+    { hi: "सरकारी नौकरी आवेदन", dept: "Recruitment", docs: ["सभी मार्कशीट (10/12/Degree)", "आधार कार्ड", "OTR नंबर (यदि हो)", "DigiLocker अकाउंट विवरण", "ताजा पासपोर्ट फोटो व सिग्नेचर", "मोबाइल व ईमेल"], note: "ईमेल आईडी का एक्टिव पासवर्ड साथ लाएं।" },
+    { hi: "आयुष्मान कार्ड", dept: "स्वास्थ्य विभाग", docs: ["पात्रता वाला राशन कार्ड (लाल/सफेद)", "आधार कार्ड", "आधार लिंक मोबाइल नंबर"], note: "सूची में नाम होने पर ही फ्री इलाज की सुविधा मिलेगी।" },
+    { hi: "ड्राइविंग लाइसेंस", dept: "perivahan (RTO)", docs: ["आधार कार्ड", "ब्लड ग्रुप जानकारी", "ताजा फोटो", "लर्निंग डीएल नंबर (पक्के हेतु)", "मेडिकल सर्टिफिकेट (40+ उम्र हेतु)"], note: "लर्निंग के 30 दिन बाद पक्का लाइसेंस बनेगा।" },
+    { hi: "पीएम किसान", dept: "कृषि विभाग", docs: ["ताजा खतौनी (Registrar वाली)", "आधार कार्ड", "बैंक पासबुक (आधार लिंक)", "आधार लिंक मोबाइल"], note: "Land Seeding और E-KYC अनिवार्य है।" },
+    { hi: "आधार अपडेट", dept: "UIDAI", docs: ["मूल आधार कार्ड", "पहचान साक्ष्य (वोटर/मार्कशीट/पैन)", "पते का साक्ष्य", "मोबाइल नंबर"], note: "बायोमेट्रिक (फोटो/फिंगर) हेतु स्वयं आना होगा।" },
+    { hi: "छात्रवृत्ति आवेदन", dept: "शिक्षा विभाग", docs: ["पिछली मार्कशीट", "आय, जाति व निवास प्रमाण पत्र", "फीस रसीद (वर्तमान सत्र)", "बैंक पासबुक (NPCI लिंक)", "संस्था आईडी"], note: "खाता आधार से मैप (DBT) होना अनिवार्य है।" },
+    { hi: "शादी पंजीकरण", dept: "स्टाम्प विभाग", docs: ["पति-पत्नी आधार कार्ड", "शादी का कार्ड व 2 फोटो", "3 गवाहों के आधार कार्ड व मोबाइल", "शादी का हलफनामा"], note: "रजिस्ट्रेशन के समय गवाहों का होना अनिवार्य है।" },
+    { hi: "PF निकासी", dept: "EPFO", docs: ["UAN नंबर व पासवर्ड", "आधार कार्ड", "बैंक चेक या पासबुक फोटो", "पैन कार्ड (50K+ राशि हेतु)"], note: "मोबाइल नंबर आधार और UAN में समान होना चाहिए।" },
+    { hi: "चरित्र प्रमाण पत्र", dept: "पुलिस विभाग", docs: ["आधार कार्ड", "ताजा पासपोर्ट फोटो", "ग्राम प्रधान/पार्षद का चरित्र प्रमाण", "सक्रिय मोबाइल"], note: "पुलिस वेरिफिकेशन के बाद ऑनलाइन प्राप्त होगा।" },
+    { hi: "खतौनी नकल", dept: "राजस्व विभाग", docs: ["खाता संख्या या गाटा संख्या", "गाँव का नाम"], note: "केवल डिजिटल हस्ताक्षरित खतौनी ही मान्य है।" },
+    { hi: "MSME/उद्यम पंजीकरण", dept: "MSME मंत्रालय", docs: ["आधार कार्ड", "पैन कार्ड (अनिवार्य)", "बैंक विवरण", "व्यवसाय का पता"], note: "व्यापारिक लोन हेतु यह अनिवार्य है।" },
+    { hi: "वोटर आईडी (नया)", dept: "निर्वाचन आयोग", docs: ["आधार कार्ड", "ताजा कलर फोटो", "आयु साक्ष्य (मार्कशीट/जन्म प्रमाण)", "मोबाइल"], note: "18 वर्ष पूर्ण होने पर ही आवेदन संभव है।" },
+    { hi: "विकलांगता (UDID) कार्ड", dept: "दिव्यांग विभाग", docs: ["मेडिकल रिपोर्ट (CMO वाली)", "आधार कार्ड", "विकलांगता दर्शाती फोटो", "बैंक पासबुक"], note: "40% से अधिक विकलांगता अनिवार्य है।" },
+    { hi: "मृतक आश्रित लाभ", dept: "समाज कल्याण", docs: ["मृत्यु प्रमाण पत्र", "मृतक का आधार", "आश्रित का आधार व आय प्रमाण", "बैंक पासबुक"], note: "मृत्यु के 1 वर्ष के भीतर आवेदन अनिवार्य।" },
+    { hi: "नवोदय/सैनिक स्कूल", dept: "शिक्षा विभाग", docs: ["छात्र का आधार", "ताजा फोटो", "पिछली कक्षा की मार्कशीट", "आय/जाति (यदि लागू हो)"], note: "प्रवेश परीक्षा हेतु पात्रता चेक करें।" },
+    { hi: "बिजली कनेक्शन/बिल", dept: "UPPCL", docs: ["आधार कार्ड", "जमीन के कागज/किरायानामा", "पड़ोसी का बिल", "मोबाइल"], note: "नया मीटर झटपट पोर्टल से लगेगा।" },
+    { hi: "ई-श्रम कार्ड", dept: "श्रम मंत्रालय", docs: ["आधार कार्ड", "बैंक पासबुक", "आधार लिंक मोबाइल"], note: "असंगठित मजदूरों हेतु सरकारी डेटाबेस।" },
+    { hi: "लेबर कार्ड (BOCW)", dept: "श्रम विभाग", docs: ["आधार", "बैंक पासबुक", "90 दिन कार्य का साक्ष्य (नियोजन प्रमाण)", "फोटो"], note: "सरकारी योजनाओं का लाभ पाने हेतु।" },
+    { hi: "शपथ पत्र (Affidavit)", dept: "तहसील", docs: ["आधार कार्ड", "शपथ का विषय (कारण)", "स्टाम्प (10/100 रुपये)"], note: "त्रुटि सुधार या घोषणा हेतु।" },
+    { hi: "जन्म/मृत्यु प्रमाण", dept: "पंचायत/नगर पालिका", docs: ["हॉस्पिटल रसीद/श्मशान पर्ची", "माता-पिता/मृतक का आधार", "आवेदक आधार"], note: "21 दिन के भीतर आवेदन निःशुल्क है।" },
+    { hi: "उज्ज्वला गैस", dept: "पेट्रोलियम", docs: ["राशन कार्ड (बीपीएल)", "परिवार के सभी आधार", "बैंक पासबुक", "महिला मुखिया फोटो"], note: "केवल पात्र महिलाओं हेतु।" },
+    { hi: "शादीशुदा महिला जाति सत्यापन", dept: "राजस्व", docs: ["महिला आधार (ससुराल)", "पिता जाति साक्ष्य (मायके)", "शादी का कार्ड", "लेखपाल आख्या"], note: "मायके पक्ष की रिपोर्ट अनिवार्य है।" },
+    { hi: "नाम/DOB सुधार", dept: "राजपत्र (Gazette)", docs: ["आधार", "पुराना साक्ष्य", "शपथ पत्र", "मार्कशीट", "अखबार कटिंग"], note: "सरकारी गजट विज्ञापन हेतु।" },
+    { hi: "अन्य ऑनलाइन फॉर्म", dept: "डिजिटल सेवा", docs: ["आधार कार्ड", "विवरण लाएं"], note: "सभी प्रकार के प्राइवेट व सरकारी फॉर्म।" }
 ];
 
-const grid = document.getElementById('service-grid');
-
-function renderServices(list) {
-    grid.innerHTML = "";
-    list.forEach((s, index) => {
+function renderServices() {
+    const grid = document.getElementById('service-grid');
+    services.forEach((s, index) => {
         const card = document.createElement('div');
         card.className = 'card';
-        // यहाँ # और सीरियल नंबर जोड़ा गया है
-        card.innerHTML = `<span class="dept-name">#${index + 1} | ${s.dept}</span><strong>${s.hi}</strong><small>${s.en}</small>`;
-        card.onclick = () => openModal(s, index + 1);
+        card.innerHTML = `<span style="color:#0288d1; font-size:0.75rem;">#${index+2} | ${s.dept}</span><strong>${s.hi}</strong><small>चेकलिस्ट देखें ➔</small>`;
+        card.onclick = () => {
+            document.getElementById('modalTitle').innerText = s.hi;
+            document.getElementById('docListItems').innerHTML = s.docs.map(d => `<li>${d}</li>`).join('');
+            document.getElementById('specialNote').innerText = "💡 " + s.note;
+            document.getElementById('mWa').href = `https://wa.me/917300789906?text=नमस्ते, मुझे ${s.hi} सेवा की जानकारी चाहिए।`;
+            document.getElementById('serviceModal').style.display = "block";
+        };
         grid.appendChild(card);
     });
 }
 
-function filterServices() {
-    const term = document.getElementById('searchBar').value.toLowerCase();
-    const filtered = services.filter(s => s.hi.toLowerCase().includes(term) || s.en.toLowerCase().includes(term));
-    renderServices(filtered);
+// --- MASTER RESUME LOGIC ---
+let eduData = [], compData = [], skillData = [], customData = [];
+function toggleOther(select, inputId) { document.getElementById(inputId).style.display = (select.value === 'Other') ? 'block' : 'none'; }
+function handleSelect(select, type) {
+    const val = select.value;
+    if(val === 'Other') document.getElementById(type === 'comp' ? 'cOther' : 'sOther').style.display = 'block';
+    else if(val) { type === 'comp' ? compData.push(val) : skillData.push(val); document.getElementById(type === 'comp' ? 'compTags' : 'skillTags').innerHTML += `<span class="badge">${val}</span>`; select.value = ""; }
+}
+function addEdu() {
+    const sel = document.getElementById('eCourse'), c = sel.value === 'Other' ? document.getElementById('eOther').value : sel.value;
+    const b = document.getElementById('eBoard').value, y = document.getElementById('eYear').value, p = document.getElementById('ePerc').value;
+    if(c && b) { eduData.push({c, b, y, p}); document.getElementById('eduTags').innerHTML += `<span class="badge">${c}</span>`; }
+}
+function addCustom() {
+    const h = document.getElementById('custH').value, v = document.getElementById('custV').value;
+    if(h && v) { customData.push({h, v}); document.getElementById('custTags').innerHTML += `<span class="badge" style="background:#fff3e0;">${h}</span>`; document.getElementById('custH').value=""; document.getElementById('custV').value=""; }
 }
 
-function openModal(s, num) {
-    // पॉपअप के टाइटल में नंबर जोड़ना
-    document.getElementById('modalTitle').innerText = num + ". " + s.hi;
-    document.getElementById('modalDept').innerText = "संबंधित विभाग: " + s.dept;
-    
-    let subHtml = "";
-    if(s.subServices) {
-        subHtml = s.subServices.map(sub => `<span class="sub-service-tag">${sub}</span>`).join('');
-    }
-    document.getElementById('subServiceList').innerHTML = subHtml;
-
-    document.getElementById('docList').innerHTML = s.docs.map(d => `<li>${d}</li>`).join('');
-    document.getElementById('specialNote').innerText = "💡 " + s.note;
-    
-    // व्हाट्सएप मैसेज में नंबर शामिल करना
-    const waMsg = `नमस्ते आदर्श जी, मुझे सर्विस नंबर ${num} (*${s.hi}*) के बारे में जानकारी चाहिए।`;
-    document.getElementById('mWa').href = `https://wa.me/917300789906?text=${encodeURIComponent(waMsg)}`;
-    
-    document.getElementById('serviceModal').style.display = "block";
+function printResume() {
+    document.getElementById('pName').innerText = document.getElementById('rName').value;
+    const email = document.getElementById('rEmail').value;
+    document.getElementById('pContact').innerText = "Mobile: " + document.getElementById('rPhone').value + (email ? " | Email: " + email : "");
+    document.getElementById('pAddr').innerText = "Address: " + document.getElementById('rAddr').value;
+    document.getElementById('pObj').innerText = document.getElementById('rObj').value;
+    document.getElementById('pExp').innerText = document.getElementById('rExp').value || "Fresher";
+    document.getElementById('ppFather').innerText = document.getElementById('rFather').value;
+    document.getElementById('ppDOB').innerText = document.getElementById('rDOB').value;
+    document.getElementById('pEduTable').innerHTML = eduData.map(e => `<tr><td>${e.c}</td><td>${e.b}</td><td>${e.y}</td><td>${e.p}</td></tr>`).join('');
+    document.getElementById('pCompSection').style.display = compData.length ? 'block' : 'none';
+    document.getElementById('pCompList').innerHTML = compData.map(c => `<li>${c}</li>`).join('');
+    document.getElementById('pSkillSection').style.display = skillData.length ? 'block' : 'none';
+    document.getElementById('pSkillList').innerHTML = skillData.map(s => `<li>${s}</li>`).join('');
+    document.getElementById('pCustomSection').innerHTML = customData.map(cd => `<div class="res-head">${cd.h}</div><p style="font-size:14px; padding-left:10px;">${cd.v}</p>`).join('');
+    const photo = document.getElementById('rPhoto').files[0];
+    if (photo) { document.getElementById('pPhoto').src = URL.createObjectURL(photo); document.getElementById('pPhoto').style.display = 'block'; }
+    window.print();
 }
 
-function closeModal() { document.getElementById('serviceModal').style.display = "none"; }
-window.onclick = function(e) { if (e.target == document.getElementById('serviceModal')) closeModal(); }
-
-renderServices(services);
+function openResumeBuilder() { document.getElementById('resumeModal').style.display = 'block'; }
+function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+window.onload = renderServices;
 </script>
 </body>
 </html>
-
