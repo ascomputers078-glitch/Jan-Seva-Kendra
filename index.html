@@ -3,284 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>सिरोही जन सेवा केंद्र - सैदपुर | 7300789906</title>
+    
+    <title>CSC सरकारी नौकरी | सिरोही जन सेवा केंद्र सैदपुर | डिजिटल सेवा पोर्टल</title>
+    <meta name="description" content="सिरोही जन सेवा केंद्र सैदपुर - CSC सरकारी नौकरी, लेटेस्ट जॉब्स, एडमिट कार्ड और रिजल्ट्स। पात्रता, लंबाई, दौड़ और पदों की पूरी जानकारी।">
+    <meta name="keywords" content="CSC सरकारी नौकरी, Sirohi Jan Seva Kendra, सिरोही जन सेवा केंद्र, CSC Saidpur, सरकारी रिजल्ट, Sarkari Job CSC, Digital Seva Saidpur">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --primary: #0a3d62; --secondary: #eb2f06; --accent: #f6b93b; --bg: #f4f7f6; --wa: #25D366; --call: #3498db; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); margin: 0; padding: 0; }
+        :root { --primary: #0a3d62; --secondary: #eb2f06; --bg: #f0f4f7; --white: #ffffff; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); margin: 0; padding: 0; color: #333; }
         
-        /* Govt Top Bar */
-        .top-gov-bar { background: #fff; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ddd; }
-        .logo-text { font-weight: 800; font-size: 1.1rem; } .logo-text b { color: #138808; }
-        .main-header { background: linear-gradient(135deg, var(--primary), #1e3799); color: #fff; padding: 30px 20px; text-align: center; }
+        header { background: linear-gradient(rgba(10, 61, 98, 0.9), rgba(10, 61, 98, 0.9)), url('###') center/cover; color: white; padding: 35px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.2rem; }
+
+        .contact-box { background: white; max-width: 950px; margin: -25px auto 20px; padding: 15px; border-radius: 12px; display: flex; justify-content: space-around; box-shadow: 0 10px 25px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 10px; }
+        .contact-item { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
+
+        .container { max-width: 1200px; margin: auto; padding: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 15px; }
+        .category-card { background: white; border-radius: 12px; padding: 18px; border-top: 5px solid var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .group-title { color: var(--secondary); font-size: 1.2rem; font-weight: bold; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         
-        /* Buttons */
-        .h-btn { padding: 12px 25px; border-radius: 50px; text-decoration: none; color: white; font-weight: bold; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.2); cursor: pointer; border: none; }
-        .h-btn-call { background: var(--call); } .h-btn-wa { background: var(--wa); } .h-btn-map { background: #db4437; border: 2px solid #fff; }
+        .btn-container { display: flex; flex-wrap: wrap; gap: 8px; }
+        .service-btn { text-decoration: none; background: #f8f9fa; color: var(--primary); padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; border: 1px solid #dee2e6; transition: 0.3s; flex: 1 1 45%; text-align: center; cursor: pointer; }
+        .service-btn:hover { background: var(--primary); color: white; transform: translateY(-2px); }
 
-        .container { max-width: 1250px; margin: auto; padding: 20px 20px 50px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
-        .card { background: #fff; padding: 25px; border-radius: 8px; text-align: left; cursor: pointer; border-top: 4px solid var(--primary); transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .card:hover { transform: translateY(-5px); border-top-color: var(--secondary); }
-        .card.resume-card { background: #fffcf0; border-top-color: #f39c12; }
-        .card strong { display: block; color: var(--primary); font-size: 1.1rem; margin-top: 5px; }
+        .important-note { background: #fff5f5; border-left: 4px solid #e74c3c; padding: 10px; margin-top: 15px; font-size: 0.82rem; color: #c0392b; border-radius: 4px; font-weight: 600; }
 
-        /* Modal Settings */
-        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); overflow-y: auto; padding: 20px 0; }
-        .modal-content { background: #fff; margin: auto; padding: 30px; width: 90%; max-width: 950px; border-radius: 12px; position: relative; }
-        .close { position: absolute; right: 20px; top: 10px; font-size: 35px; cursor: pointer; color: #888; }
+        /* --- POPUP SYSTEM --- */
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); }
+        .modal-content { background: #fff; margin: 1% auto; width: 95%; max-width: 880px; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .modal-header { background: var(--secondary); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
         
-        /* Resume Form Advanced */
-        .form-title { background: #eee; padding: 10px; border-left: 5px solid var(--primary); margin: 20px 0 10px; font-weight: bold; }
-        .row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
-        .col { flex: 1; min-width: 200px; }
-        input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        .badge { background: #e3f2fd; padding: 5px 12px; border-radius: 15px; display: inline-block; margin: 3px; font-size: 0.85rem; border: 1px solid #bbdefb; }
-        .hidden-input { display: none; margin-top: 5px; border: 1px solid var(--call); }
+        .job-grid { display: grid; grid-template-columns: repeat(3, 1fr); background: #eee; gap: 1px; }
+        .job-col { background: #fff; padding: 10px; min-height: 400px; }
+        .col-head { background: #f1f1f1; text-align: center; padding: 5px; font-weight: bold; color: var(--secondary); border-bottom: 2px solid var(--secondary); margin-bottom: 10px; font-size: 0.9rem; }
+        .job-link { display: block; padding: 8px 5px; border-bottom: 1px solid #f0f0f0; color: #0000ff; text-decoration: none; font-size: 0.85rem; font-weight: 500; cursor: pointer; }
 
-        /* Print Logic (A4 Size) */
-        #resume-print-view { display: none; }
-        @media print {
-            body * { display: none !important; }
-            #resume-print-view, #resume-print-view * { display: block !important; }
-            #resume-print-view { position: absolute; left: 0; top: 0; width: 100%; font-family: 'Times New Roman', serif; padding: 0; margin: 0; background: white; }
-            .res-head { background: #f0f0f0 !important; padding: 5px 10px; font-weight: bold; border-left: 5px solid #000; margin: 15px 0 5px; text-transform: uppercase; font-size: 14px; -webkit-print-color-adjust: exact; }
-        }
+        /* Detail View Layer 3 */
+        #job-detail-section { display: none; padding: 20px; background: #fff; max-height: 85vh; overflow-y: auto; }
+        .sr-table { width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 15px; }
+        .sr-table th { background: #ff0000; color: white; padding: 10px; text-align: center; border: 1px solid #000; font-size: 1.1rem; }
+        .sr-table td { border: 1px solid #000; padding: 10px; vertical-align: top; font-size: 0.85rem; }
+        .red-lbl { color: #ff0000; font-weight: bold; text-decoration: underline; display: block; margin-bottom: 5px; }
+        
+        .sub-table { width: 100%; border-collapse: collapse; text-align: center; margin-top: 5px; }
+        .sub-table th, .sub-table td { border: 1px solid #ccc; padding: 6px; font-size: 0.8rem; }
+        .sub-table th { background: #f8f9fa; color: #333; }
+
+        /* Centered 5 Buttons */
+        .btn-group-center { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; margin: 20px auto; padding: 15px; background: #f1f3f5; border-radius: 10px; }
+        .act-link { text-decoration: none; padding: 10px 15px; border-radius: 5px; font-weight: bold; color: white; font-size: 0.85rem; text-align: center; min-width: 140px; }
+        .b-apply { background: #27ae60; } .b-admit { background: #2980b9; } .b-res { background: #8e44ad; } .b-pdf { background: #e67e22; } .b-web { background: #34495e; }
+        .back-btn { background: #555; color: white; border: none; padding: 6px 15px; border-radius: 4px; cursor: pointer; margin-bottom: 10px; }
+
+        footer { background: #1e272e; color: white; padding: 20px; text-align: center; margin-top: 30px; font-size: 0.9rem; }
+        @media (max-width: 768px) { .job-grid { grid-template-columns: 1fr; } .act-link { width: 100%; } }
     </style>
 </head>
 <body>
 
-    <div class="top-gov-bar">
-        <div class="logo-text">डिजिटल<span>●</span>इण्डिया<b>●</b></div>
-        <div style="font-weight: 800; color: var(--primary);">CSC डिजिटल सेवा | सैदपुर बुलंदशहर</div>
-    </div>
+<header>
+    <h1>सिरोही जन सेवा केंद्र - Saidpur</h1>
+    <p>CSC सरकारी नौकरी एवं डिजिटल सेवा पोर्टल</p>
+</header>
 
-    <header class="main-header">
-        <h1>सिरोही जन सेवा केंद्र</h1>
-        <div style="color: var(--accent); font-weight: bold;">संचालक: आदर्श सिरोही | 7300789906</div>
-        <div style="margin-top:15px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
-            <a href="tel:7300789906" class="h-btn h-btn-call">📞 कॉल</a>
-            <a href="https://wa.me/917300789906" class="h-btn h-btn-wa" target="_blank">💬 व्हाट्सएप</a>
-            <a href="https://maps.app.goo.gl/c7vcHvTKiBFpjtNXA" target="_blank" class="h-btn h-btn-map">📍 मैप लोकेशन</a>
+<div class="contact-box">
+    <a href="tel:7300789906" class="contact-item"><i class="fas fa-phone"></i> 7300789906</a>
+    <a href="https://wa.me/917300789906" target="_blank" class="contact-item" style="color:#25D366;"><i class="fab fa-whatsapp"></i> व्हाट्सएप</a>
+    <a href="https://maps.app.goo.gl/tbtZNmKkEEBWKjU36" target="_blank" class="contact-item" style="color:#db4437;"><i class="fas fa-map-marker-alt"></i> लोकेशन</a>
+</div>
+
+<div class="container">
+    <div class="grid" id="service-grid"></div>
+</div>
+
+<div id="jobModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span>🚀 CSC सरकारी नौकरी अपडेट्स (SarkariResult Style)</span>
+            <span style="cursor:pointer; font-size:24px;" onclick="closePopup()">×</span>
         </div>
-    </header>
-
-    <div class="container">
-        <div class="grid" id="service-grid">
-            <div class="card resume-card" onclick="openResumeBuilder()">
-                <span style="color:#e67e22; font-weight:bold;">#1 | PROFESSIONAL TOOL</span>
-                <strong>प्रोफेशनल रिज्यूम मेकर</strong>
-                <small>ऑब्जेक्टिव, एक्सपीरियंस और फोटो के साथ</small>
-            </div>
+        <div id="job-list-view" class="job-grid">
+            <div class="job-col"><div class="col-head">RESULT</div><div id="res-col"></div></div>
+            <div class="job-col"><div class="col-head">ADMIT CARD</div><div id="adm-col"></div></div>
+            <div class="job-col"><div class="col-head">LATEST JOBS</div><div id="job-col"></div></div>
         </div>
-    </div>
-
-    <div id="resumeModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal('resumeModal')">×</span>
-            <h2 style="text-align: center; color: #0a3d62;">Modern Resume Builder</h2>
-            
-            <div class="form-title">1. Personal Information</div>
-            <div class="row">
-                <div class="col"><label>पूरा नाम</label><input type="text" id="rName" placeholder="AADARSH SIROHI"></div>
-                <div class="col"><label>पिता का नाम</label><input type="text" id="rFather"></div>
-                <div class="col"><label>फोटो अपलोड</label><input type="file" id="rPhoto" accept="image/*"></div>
-            </div>
-            <div class="row">
-                <div class="col"><label>जन्म तिथि</label><input type="date" id="rDOB"></div>
-                <div class="col"><label>मोबाइल नंबर</label><input type="text" id="rPhone"></div>
-                <div class="col"><label>ईमेल (Optional)</label><input type="email" id="rEmail"></div>
-            </div>
-            <div class="row"><div class="col"><label>पूरा पता</label><input type="text" id="rAddr" placeholder="गांव, पोस्ट, जिला, पिन कोड"></div></div>
-
-            <div class="form-title">2. Objective & Experience</div>
-            <div class="row">
-                <div class="col"><label>करियर उद्देश्य (Objective)</label>
-                <textarea id="rObj" rows="2">To work with an organization where I can utilize my skills and contribute to the growth of the company.</textarea></div>
-            </div>
-            <div class="row">
-                <div class="col"><label>कार्य अनुभव (Work Experience)</label>
-                <textarea id="rExp" rows="2" placeholder="खाली छोड़ने पर Fresher आएगा"></textarea></div>
-            </div>
-
-            <div class="form-title">3. Education & Skills</div>
-            <div class="row">
-                <select id="eCourse" style="flex:1;" onchange="toggleOther(this, 'eOther')">
-                    <option value="">शिक्षा चुनें</option>
-                    <option value="10th (High School)">10th</option>
-                    <option value="12th (Intermediate)">12th</option>
-                    <option value="Graduation">Graduation</option>
-                    <option value="Other">Other...</option>
-                </select>
-                <input type="text" id="eOther" class="hidden-input" placeholder="डिग्री का नाम">
-                <input type="text" id="eBoard" placeholder="बोर्ड" style="flex:1;">
-                <input type="text" id="eYear" placeholder="वर्ष" style="flex:0.5;">
-                <button class="h-btn" style="background:#27ae60; padding:5px 15px;" onclick="addEdu()">Add Edu</button>
-            </div>
-            <div id="eduTags"></div>
-
-            <div class="row">
-                <select style="flex:1;" onchange="handleSelect(this, 'comp')">
-                    <option value="">-- कंप्यूटर कोर्स --</option>
-                    <option value="Basic Computer Course">Basic Computer</option>
-                    <option value="CCC (NIELIT)">CCC</option>
-                    <option value="ADCA">ADCA</option>
-                    <option value="Other">Other...</option>
-                </select>
-                <input type="text" id="cOther" class="hidden-input" placeholder="कोर्स लिखें">
-                <select style="flex:1;" onchange="handleSelect(this, 'skill')">
-                    <option value="">-- मुख्य स्किल्स --</option>
-                    <option value="Typing (Hindi & English)">Typing</option>
-                    <option value="Online Work">Online Work</option>
-                    <option value="Other">Other...</option>
-                </select>
-                <input type="text" id="sOther" class="hidden-input" placeholder="स्किल लिखें">
-            </div>
-            <div id="compTags"></div> <div id="skillTags"></div>
-
-            <div class="form-title">4. Custom Heading</div>
-            <div class="row">
-                <input type="text" id="custH" placeholder="हेडिंग (जैसे: Strength)" class="col">
-                <input type="text" id="custV" placeholder="विवरण" class="col">
-                <button class="h-btn" style="background:var(--call);" onclick="addCustom()">Add</button>
-            </div>
-            <div id="custTags"></div>
-
-            <button onclick="printResume()" style="width:100%; padding:18px; background:#27ae60; color:white; border:none; border-radius:8px; font-weight:bold; cursor:pointer; margin-top:20px;">प्रिंट रिज्यूम (PDF)</button>
+        <div id="job-detail-section">
+            <button class="back-btn" onclick="backToList()">⬅️ वापस लिस्ट देखें</button>
+            <div id="detail-content"></div>
         </div>
     </div>
+</div>
 
-    <div id="resume-print-view">
-        <div style="padding:45px; border:1px solid #000; min-height:285mm; background:#fff;">
-            <div style="display:flex; justify-content:space-between; border-bottom:2px solid #000; padding-bottom:15px;">
-                <div><h1 id="pName" style="margin:0; text-transform:uppercase;"></h1><p id="pContact" style="margin:5px 0;"></p><p id="pAddr" style="margin:0; font-size:14px;"></p></div>
-                <img id="pPhoto" style="width:100px; height:120px; border:1px solid #000; display:none; object-fit:cover;">
-            </div>
-            <div class="res-head">Career Objective</div>
-            <p id="pObj" style="font-size:14px; margin: 5px 10px;"></p>
-            <div class="res-head">Academic Qualification</div>
-            <table style="width:100%; border-collapse:collapse; margin-top:10px;" border="1"><thead style="background:#f2f2f2;"><tr><th>Class</th><th>Board</th><th>Year</th><th>%</th></tr></thead><tbody id="pEduTable" style="text-align:center; font-size:14px;"></tbody></table>
-            <div class="res-head">Work Experience</div>
-            <p id="pExp" style="font-size:14px; margin: 5px 10px;"></p>
-            <div id="pCompSection" style="display:none;"><div class="res-head">Computer Knowledge</div><ul id="pCompList" style="font-size:14px;"></ul></div>
-            <div id="pSkillSection" style="display:none;"><div class="res-head">Key Skills</div><ul id="pSkillList" style="font-size:14px;"></ul></div>
-            <div id="pCustomSection"></div>
-            <div class="res-head">Personal Profile</div>
-            <table style="width:100%; font-size:14px; border:none; line-height:1.8; margin-left:10px;">
-                <tr><td width="150"><strong>Father's Name</strong></td><td>: <span id="ppFather"></span></td></tr>
-                <tr><td><strong>Date of Birth</strong></td><td>: <span id="ppDOB"></span></td></tr>
-                <tr><td><strong>Gender</strong></td><td>: Male | Nationality: Indian</td></tr>
-            </table>
-            <div class="res-head" style="margin-top:30px;">Declaration</div>
-            <p style="font-size:13px; font-style:italic; margin-left:10px;">I hereby declare that all information given above is true to the best of my knowledge.</p>
-            <div style="margin-top:60px; display:flex; justify-content:space-between; padding:0 20px;"><div>Place: ________<br>Date: ________</div><div>___________________<br>(Signature)</div></div>
-        </div>
-    </div>
-
-    <div id="serviceModal" class="modal">
-        <div class="modal-content" style="max-width: 650px;">
-            <span class="close" onclick="closeModal('serviceModal')">×</span>
-            <h2 id="modalTitle" style="color:var(--primary);"></h2>
-            <div style="background:#fdfaf0; padding:15px; border-radius:8px; border:1px solid #f1e4b8; margin:15px 0;">
-                <h4 style="margin-top:0;">ऑफिशियल अनिवार्य दस्तावेज:</h4>
-                <ul id="docListItems" style="line-height:2.2; font-weight:500;"></ul>
-            </div>
-            <div id="specialNote" style="background:#fff5f5; color:red; padding:10px; border-radius:5px; font-weight:bold;"></div>
-            <a id="mWa" href="#" target="_blank" class="h-btn h-btn-wa" style="justify-content:center; margin-top:15px;">WhatsApp पर जानकारी लें</a>
-        </div>
-    </div>
+<footer>
+    <p>© 2025 सिरोही जन सेवा केंद्र | CSC सरकारी नौकरी Saidpur | डिजिटल इंडिया</p>
+</footer>
 
 <script>
-// --- FULL OFFICIAL SERVICES DATA (RESTORED) ---
-const services = [
-    { hi: "आय प्रमाण पत्र", dept: "राजस्व विभाग", docs: ["आधार कार्ड (अनिवार्य)", "ताजा पासपोर्ट फोटो", "स्व-घोषणा पत्र (e-District)", "प्रधान/पार्षद आय रिपोर्ट", "राशन कार्ड या बिजली बिल (साक्ष्य हेतु)"], note: "आय का विवरण परिवार के सभी सदस्यों के अनुसार होना चाहिए।" },
-    { hi: "जाति प्रमाण पत्र", dept: "राजस्व विभाग", docs: ["आधार कार्ड", "पिता का जाति प्रमाण पत्र", "स्व-घोषणा पत्र", "प्रधान/पार्षद जाति रिपोर्ट", "फोटो"], note: "विवाहित महिला हेतु जाति प्रमाण पिता पक्ष से ही बनेगा।" },
-    { hi: "मूल निवास प्रमाण", dept: "राजस्व विभाग", docs: ["आधार कार्ड", "15 वर्ष पुराना निवास साक्ष्य (TC/वोटर लिस्ट/पुराना बिल)", "प्रधान रिपोर्ट", "स्व-घोषणा पत्र", "फोटो"], note: "उत्तर प्रदेश का स्थायी निवासी होना अनिवार्य है।" },
-    { hi: "नया राशन कार्ड", dept: "खाद्य विभाग (FCS)", docs: ["महिला मुखिया बैंक पासबुक", "पूरे परिवार के आधार कार्ड", "आय प्रमाण पत्र (नया)", "परिवार ग्रुप फोटो", "गैस कनेक्शन रसीद"], note: "यूनिट्स के नाम आधार कार्ड के अनुसार ही जुड़ेंगे।" },
-    { hi: "पैन कार्ड (नया/सुधार)", dept: "Income Tax", docs: ["आधार कार्ड (पूरी जन्मतिथि वाला)", "2 रंगीन पासपोर्ट फोटो", "आधार लिंक मोबाइल (OTP हेतु)", "ईमेल आईडी"], note: "सुधार हेतु पुराने पैन कार्ड की कॉपी साथ लाएं।" },
-    { hi: "सरकारी नौकरी आवेदन", dept: "Recruitment", docs: ["सभी मार्कशीट (10/12/Degree)", "आधार कार्ड", "OTR नंबर (यदि हो)", "DigiLocker अकाउंट विवरण", "ताजा पासपोर्ट फोटो व सिग्नेचर", "मोबाइल व ईमेल"], note: "ईमेल आईडी का एक्टिव पासवर्ड साथ लाएं।" },
-    { hi: "आयुष्मान कार्ड", dept: "स्वास्थ्य विभाग", docs: ["पात्रता वाला राशन कार्ड (लाल/सफेद)", "आधार कार्ड", "आधार लिंक मोबाइल नंबर"], note: "सूची में नाम होने पर ही फ्री इलाज की सुविधा मिलेगी।" },
-    { hi: "ड्राइविंग लाइसेंस", dept: "perivahan (RTO)", docs: ["आधार कार्ड", "ब्लड ग्रुप जानकारी", "ताजा फोटो", "लर्निंग डीएल नंबर (पक्के हेतु)", "मेडिकल सर्टिफिकेट (40+ उम्र हेतु)"], note: "लर्निंग के 30 दिन बाद पक्का लाइसेंस बनेगा।" },
-    { hi: "पीएम किसान", dept: "कृषि विभाग", docs: ["ताजा खतौनी (Registrar वाली)", "आधार कार्ड", "बैंक पासबुक (आधार लिंक)", "आधार लिंक मोबाइल"], note: "Land Seeding और E-KYC अनिवार्य है।" },
-    { hi: "आधार अपडेट", dept: "UIDAI", docs: ["मूल आधार कार्ड", "पहचान साक्ष्य (वोटर/मार्कशीट/पैन)", "पते का साक्ष्य", "मोबाइल नंबर"], note: "बायोमेट्रिक (फोटो/फिंगर) हेतु स्वयं आना होगा।" },
-    { hi: "छात्रवृत्ति आवेदन", dept: "शिक्षा विभाग", docs: ["पिछली मार्कशीट", "आय, जाति व निवास प्रमाण पत्र", "फीस रसीद (वर्तमान सत्र)", "बैंक पासबुक (NPCI लिंक)", "संस्था आईडी"], note: "खाता आधार से मैप (DBT) होना अनिवार्य है।" },
-    { hi: "शादी पंजीकरण", dept: "स्टाम्प विभाग", docs: ["पति-पत्नी आधार कार्ड", "शादी का कार्ड व 2 फोटो", "3 गवाहों के आधार कार्ड व मोबाइल", "शादी का हलफनामा"], note: "रजिस्ट्रेशन के समय गवाहों का होना अनिवार्य है।" },
-    { hi: "PF निकासी", dept: "EPFO", docs: ["UAN नंबर व पासवर्ड", "आधार कार्ड", "बैंक चेक या पासबुक फोटो", "पैन कार्ड (50K+ राशि हेतु)"], note: "मोबाइल नंबर आधार और UAN में समान होना चाहिए।" },
-    { hi: "चरित्र प्रमाण पत्र", dept: "पुलिस विभाग", docs: ["आधार कार्ड", "ताजा पासपोर्ट फोटो", "ग्राम प्रधान/पार्षद का चरित्र प्रमाण", "सक्रिय मोबाइल"], note: "पुलिस वेरिफिकेशन के बाद ऑनलाइन प्राप्त होगा।" },
-    { hi: "खतौनी नकल", dept: "राजस्व विभाग", docs: ["खाता संख्या या गाटा संख्या", "गाँव का नाम"], note: "केवल डिजिटल हस्ताक्षरित खतौनी ही मान्य है।" },
-    { hi: "MSME/उद्यम पंजीकरण", dept: "MSME मंत्रालय", docs: ["आधार कार्ड", "पैन कार्ड (अनिवार्य)", "बैंक विवरण", "व्यवसाय का पता"], note: "व्यापारिक लोन हेतु यह अनिवार्य है।" },
-    { hi: "वोटर आईडी (नया)", dept: "निर्वाचन आयोग", docs: ["आधार कार्ड", "ताजा कलर फोटो", "आयु साक्ष्य (मार्कशीट/जन्म प्रमाण)", "मोबाइल"], note: "18 वर्ष पूर्ण होने पर ही आवेदन संभव है।" },
-    { hi: "विकलांगता (UDID) कार्ड", dept: "दिव्यांग विभाग", docs: ["मेडिकल रिपोर्ट (CMO वाली)", "आधार कार्ड", "विकलांगता दर्शाती फोटो", "बैंक पासबुक"], note: "40% से अधिक विकलांगता अनिवार्य है।" },
-    { hi: "मृतक आश्रित लाभ", dept: "समाज कल्याण", docs: ["मृत्यु प्रमाण पत्र", "मृतक का आधार", "आश्रित का आधार व आय प्रमाण", "बैंक पासबुक"], note: "मृत्यु के 1 वर्ष के भीतर आवेदन अनिवार्य।" },
-    { hi: "नवोदय/सैनिक स्कूल", dept: "शिक्षा विभाग", docs: ["छात्र का आधार", "ताजा फोटो", "पिछली कक्षा की मार्कशीट", "आय/जाति (यदि लागू हो)"], note: "प्रवेश परीक्षा हेतु पात्रता चेक करें।" },
-    { hi: "बिजली कनेक्शन/बिल", dept: "UPPCL", docs: ["आधार कार्ड", "जमीन के कागज/किरायानामा", "पड़ोसी का बिल", "मोबाइल"], note: "नया मीटर झटपट पोर्टल से लगेगा।" },
-    { hi: "ई-श्रम कार्ड", dept: "श्रम मंत्रालय", docs: ["आधार कार्ड", "बैंक पासबुक", "आधार लिंक मोबाइल"], note: "असंगठित मजदूरों हेतु सरकारी डेटाबेस।" },
-    { hi: "लेबर कार्ड (BOCW)", dept: "श्रम विभाग", docs: ["आधार", "बैंक पासबुक", "90 दिन कार्य का साक्ष्य (नियोजन प्रमाण)", "फोटो"], note: "सरकारी योजनाओं का लाभ पाने हेतु।" },
-    { hi: "शपथ पत्र (Affidavit)", dept: "तहसील", docs: ["आधार कार्ड", "शपथ का विषय (कारण)", "स्टाम्प (10/100 रुपये)"], note: "त्रुटि सुधार या घोषणा हेतु।" },
-    { hi: "जन्म/मृत्यु प्रमाण", dept: "पंचायत/नगर पालिका", docs: ["हॉस्पिटल रसीद/श्मशान पर्ची", "माता-पिता/मृतक का आधार", "आवेदक आधार"], note: "21 दिन के भीतर आवेदन निःशुल्क है।" },
-    { hi: "उज्ज्वला गैस", dept: "पेट्रोलियम", docs: ["राशन कार्ड (बीपीएल)", "परिवार के सभी आधार", "बैंक पासबुक", "महिला मुखिया फोटो"], note: "केवल पात्र महिलाओं हेतु।" },
-    { hi: "शादीशुदा महिला जाति सत्यापन", dept: "राजस्व", docs: ["महिला आधार (ससुराल)", "पिता जाति साक्ष्य (मायके)", "शादी का कार्ड", "लेखपाल आख्या"], note: "मायके पक्ष की रिपोर्ट अनिवार्य है।" },
-    { hi: "नाम/DOB सुधार", dept: "राजपत्र (Gazette)", docs: ["आधार", "पुराना साक्ष्य", "शपथ पत्र", "मार्कशीट", "अखबार कटिंग"], note: "सरकारी गजट विज्ञापन हेतु।" },
-    { hi: "अन्य ऑनलाइन फॉर्म", dept: "डिजिटल सेवा", docs: ["आधार कार्ड", "विवरण लाएं"], note: "सभी प्रकार के प्राइवेट व सरकारी फॉर्म।" }
+// ==========================================
+// यहाँ अपनी सेवाओं के लिंक '###' की जगह बदलें
+// ==========================================
+const serviceLinks = {
+    "आय प्रमाण पत्र": "https://ascomputers078-glitch.github.io/E-DISTRICT/",
+    "जाति प्रमाण पत्र": "https://ascomputers078-glitch.github.io/E-DISTRICT/",
+    "निवास प्रमाण पत्र": "https://ascomputers078-glitch.github.io/E-DISTRICT/",
+    "महिला जाति": "https://ascomputers078-glitch.github.io/E-DISTRICT/",
+    "पैन कार्ड": "###",
+    "आधार अपडेट": "https://myaadhaar.uidai.gov.in/verifyAadhaar",
+    "वोटर आईडी": "https://voters.eci.gov.in/",
+    "आयुष्मान कार्ड": "https://beneficiary.nha.gov.in/",
+    "राशन कार्ड": "###",
+    "खतौनी नकल": "https://upbhulekh.gov.in/#/home",
+    "बिजली बिल": "https://consumer.uppcl.org/wss/pay_bill_home",
+    "ड्राइविंग लाइसेंस": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do"
+};
+
+// ==========================================
+// जॉब डेटाबेस (ऑटो-फिल्टर और 5-बटन)
+// ==========================================
+const jobDatabase = {
+    "ssc-gd-2025": {
+        title: "SSC GD Constable Recruitment 2025",
+        info: "Staff Selection Commission (CSC सरकारी नौकरी) Recruitment for BSF, CISF, CRPF, SSF.",
+        fees: "Gen/OBC: ₹100 | SC/ST/Female: ₹0",
+        dates: "Last Date: 31/12/2025",
+        age: "18-23 Years",
+        eligibility: "10th Class (High School) Passed in any recognized board.",
+        vacancy: { gen: "12000", obc: "8200", ews: "3000", sc: "5000", st: "2800", total: "31000" },
+        physical: {
+            male: { h: "170 CM", c: "80-85 CM", r: "5 KM in 24 Min" },
+            female: { h: "157 CM", c: "N/A", r: "1.6 KM in 8.5 Min" }
+        },
+        links: { apply: "###", admit: "", result: "", notify: "###", web: "###" }
+    }
+};
+
+const servicesDB = [
+    { title: "प्रमाण पत्र", icon: "fa-file-invoice", note: "शादीशुदा महिला: ससुराल रिपोर्ट अनिवार्य है।", services: ["आय प्रमाण पत्र", "जाति प्रमाण पत्र", "निवास प्रमाण पत्र", "महिला जाति"] },
+    { title: "CSC सरकारी नौकरी", icon: "fa-user-graduate", isJob: true, services: ["लेटेस्ट नौकरी / रिजल्ट / एडमिट कार्ड"] },
+    { title: "डिजिटल आईडी", icon: "fa-id-card", services: ["पैन कार्ड", "आधार अपडेट", "वोटर आईडी", "आयुष्मान कार्ड"] },
+    { title: "अन्य सेवाएं", icon: "fa-laptop", services: ["राशन कार्ड", "खतौनी नकल", "बिजली बिल", "ड्राइविंग लाइसेंस"] }
 ];
 
-function renderServices() {
-    const grid = document.getElementById('service-grid');
-    services.forEach((s, index) => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `<span style="color:#0288d1; font-size:0.75rem;">#${index+2} | ${s.dept}</span><strong>${s.hi}</strong><small>चेकलिस्ट देखें ➔</small>`;
-        card.onclick = () => {
-            document.getElementById('modalTitle').innerText = s.hi;
-            document.getElementById('docListItems').innerHTML = s.docs.map(d => `<li>${d}</li>`).join('');
-            document.getElementById('specialNote').innerText = "💡 " + s.note;
-            document.getElementById('mWa').href = `https://wa.me/917300789906?text=नमस्ते, मुझे ${s.hi} सेवा की जानकारी चाहिए।`;
-            document.getElementById('serviceModal').style.display = "block";
-        };
-        grid.appendChild(card);
-    });
+const grid = document.getElementById('service-grid');
+servicesDB.forEach(group => {
+    const card = document.createElement('div');
+    card.className = 'category-card';
+    let btns = group.services.map(name => {
+        let url = serviceLinks[name] || "###";
+        return group.isJob ? `<a onclick="openPopup()" class="service-btn">${name}</a>` : `<a href="${url}" target="_blank" class="service-btn">${name}</a>`;
+    }).join('');
+    card.innerHTML = `<div class="group-title"><i class="fas ${group.icon}"></i> ${group.title}</div><div class="btn-container">${btns}</div>${group.note?`<div class="important-note">⚠️ ${group.note}</div>`:""}`;
+    grid.appendChild(card);
+});
+
+function openPopup() {
+    document.getElementById('job-list-view').style.display = "grid";
+    document.getElementById('job-detail-section').style.display = "none";
+    let jH = "", aH = "", rH = "";
+    for (let key in jobDatabase) {
+        let j = jobDatabase[key];
+        let link = `<a class="job-link" onclick="openJobDetail('${key}')">➤ ${j.title}</a>`;
+        if (j.links.apply) jH += link;
+        if (j.links.admit) aH += link;
+        if (j.links.result) rH += link;
+    }
+    document.getElementById('job-col').innerHTML = jH || "No Jobs";
+    document.getElementById('adm-col').innerHTML = aH || "No Cards";
+    document.getElementById('res-col').innerHTML = rH || "No Results";
+    document.getElementById('jobModal').style.display = "block";
 }
 
-// --- MASTER RESUME LOGIC ---
-let eduData = [], compData = [], skillData = [], customData = [];
-function toggleOther(select, inputId) { document.getElementById(inputId).style.display = (select.value === 'Other') ? 'block' : 'none'; }
-function handleSelect(select, type) {
-    const val = select.value;
-    if(val === 'Other') document.getElementById(type === 'comp' ? 'cOther' : 'sOther').style.display = 'block';
-    else if(val) { type === 'comp' ? compData.push(val) : skillData.push(val); document.getElementById(type === 'comp' ? 'compTags' : 'skillTags').innerHTML += `<span class="badge">${val}</span>`; select.value = ""; }
-}
-function addEdu() {
-    const sel = document.getElementById('eCourse'), c = sel.value === 'Other' ? document.getElementById('eOther').value : sel.value;
-    const b = document.getElementById('eBoard').value, y = document.getElementById('eYear').value, p = document.getElementById('ePerc').value;
-    if(c && b) { eduData.push({c, b, y, p}); document.getElementById('eduTags').innerHTML += `<span class="badge">${c}</span>`; }
-}
-function addCustom() {
-    const h = document.getElementById('custH').value, v = document.getElementById('custV').value;
-    if(h && v) { customData.push({h, v}); document.getElementById('custTags').innerHTML += `<span class="badge" style="background:#fff3e0;">${h}</span>`; document.getElementById('custH').value=""; document.getElementById('custV').value=""; }
-}
-
-function printResume() {
-    document.getElementById('pName').innerText = document.getElementById('rName').value;
-    const email = document.getElementById('rEmail').value;
-    document.getElementById('pContact').innerText = "Mobile: " + document.getElementById('rPhone').value + (email ? " | Email: " + email : "");
-    document.getElementById('pAddr').innerText = "Address: " + document.getElementById('rAddr').value;
-    document.getElementById('pObj').innerText = document.getElementById('rObj').value;
-    document.getElementById('pExp').innerText = document.getElementById('rExp').value || "Fresher";
-    document.getElementById('ppFather').innerText = document.getElementById('rFather').value;
-    document.getElementById('ppDOB').innerText = document.getElementById('rDOB').value;
-    document.getElementById('pEduTable').innerHTML = eduData.map(e => `<tr><td>${e.c}</td><td>${e.b}</td><td>${e.y}</td><td>${e.p}</td></tr>`).join('');
-    document.getElementById('pCompSection').style.display = compData.length ? 'block' : 'none';
-    document.getElementById('pCompList').innerHTML = compData.map(c => `<li>${c}</li>`).join('');
-    document.getElementById('pSkillSection').style.display = skillData.length ? 'block' : 'none';
-    document.getElementById('pSkillList').innerHTML = skillData.map(s => `<li>${s}</li>`).join('');
-    document.getElementById('pCustomSection').innerHTML = customData.map(cd => `<div class="res-head">${cd.h}</div><p style="font-size:14px; padding-left:10px;">${cd.v}</p>`).join('');
-    const photo = document.getElementById('rPhoto').files[0];
-    if (photo) { document.getElementById('pPhoto').src = URL.createObjectURL(photo); document.getElementById('pPhoto').style.display = 'block'; }
-    window.print();
+function openJobDetail(key) {
+    const d = jobDatabase[key];
+    document.getElementById('job-list-view').style.display = "none";
+    document.getElementById('job-detail-section').style.display = "block";
+    
+    document.getElementById('detail-content').innerHTML = `
+        <table class="sr-table">
+            <tr><th>${d.title}</th></tr>
+            <tr><td><span class="red-lbl">Short Info:</span> ${d.info}</td></tr>
+            <tr><td><span class="red-lbl">Eligibility (योग्यता):</span><p style="padding:10px; background:#f9f9f9; border-left:4px solid #f00; font-weight:600;">${d.eligibility}</p></td></tr>
+            <tr><td><span class="red-lbl">Vacancy Details (Category Wise):</span><table class="sub-table"><tr><th>Gen</th><th>OBC</th><th>EWS</th><th>SC</th><th>ST</th><th>Total</th></tr><tr><td>${d.vacancy.gen}</td><td>${d.vacancy.obc}</td><td>${d.vacancy.ews}</td><td>${d.vacancy.sc}</td><td>${d.vacancy.st}</td><td><b>${d.vacancy.total}</b></td></tr></table></td></tr>
+            <tr><td><span class="red-lbl">Physical (Male/Female):</span><table class="sub-table"><tr><th>Standard</th><th>Male</th><th>Female</th></tr><tr><td>Height</td><td>${d.physical.male.h}</td><td>${d.physical.female.h}</td></tr><tr><td>Chest</td><td>${d.physical.male.c}</td><td>${d.physical.female.c}</td></tr><tr><td>Running</td><td>${d.physical.male.r}</td><td>${d.physical.female.r}</td></tr></table></td></tr>
+        </table>
+        <div class="btn-group-center">
+            ${d.links.apply ? `<a href="${d.links.apply}" target="_blank" class="act-link b-apply">Apply Online</a>`:''}
+            ${d.links.admit ? `<a href="${d.links.admit}" target="_blank" class="act-link b-admit">Admit Card</a>`:''}
+            ${d.links.result ? `<a href="${d.links.result}" target="_blank" class="act-link b-res">Check Result</a>`:''}
+            <a href="${d.links.notify}" target="_blank" class="act-link b-pdf">Notification</a>
+            <a href="${d.links.web}" target="_blank" class="act-link b-web">Official Website</a>
+        </div>
+    `;
 }
 
-function openResumeBuilder() { document.getElementById('resumeModal').style.display = 'block'; }
-function closeModal(id) { document.getElementById(id).style.display = 'none'; }
-window.onload = renderServices;
+function backToList() { document.getElementById('job-list-view').style.display = "grid"; document.getElementById('job-detail-section').style.display = "none"; }
+function closePopup() { document.getElementById('jobModal').style.display = "none"; }
 </script>
 </body>
 </html>
