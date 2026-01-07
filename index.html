@@ -3,62 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>CSC सरकारी नौकरी | सिरोही जन सेवा केंद्र सैदपुर | डिजिटल सेवा पोर्टल</title>
-    <meta name="description" content="सिरोही जन सेवा केंद्र सैदपुर - CSC सरकारी नौकरी, लेटेस्ट जॉब्स, एडमिट कार्ड और रिजल्ट्स। पात्रता, लंबाई, दौड़ और पदों की पूरी जानकारी।">
-    <meta name="keywords" content="CSC सरकारी नौकरी, Sirohi Jan Seva Kendra, सिरोही जन सेवा केंद्र, CSC Saidpur, सरकारी रिजल्ट, Sarkari Job CSC, Digital Seva Saidpur">
+    <title>CSC सरकारी नौकरी | सिरोही जन सेवा केंद्र सैदपुर</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root { --primary: #0a3d62; --secondary: #eb2f06; --bg: #f0f4f7; --white: #ffffff; }
         body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); margin: 0; padding: 0; color: #333; }
         
-        header { background: linear-gradient(rgba(10, 61, 98, 0.9), rgba(10, 61, 98, 0.9)), url('###') center/cover; color: white; padding: 35px 20px; text-align: center; }
+        header { background: linear-gradient(rgba(10, 61, 98, 0.9), rgba(10, 61, 98, 0.9)), url('https://via.placeholder.com/1200x300') center/cover; color: white; padding: 35px 20px; text-align: center; }
         header h1 { margin: 0; font-size: 2.2rem; }
 
-        .contact-box { background: white; max-width: 950px; margin: -25px auto 20px; padding: 15px; border-radius: 12px; display: flex; justify-content: space-around; box-shadow: 0 10px 25px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 10px; }
+        .contact-box { background: white; max-width: 950px; margin: -25px auto 20px; padding: 15px; border-radius: 12px; display: flex; justify-content: space-around; box-shadow: 0 10px 25px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 10px; position: relative; z-index: 10; }
         .contact-item { text-decoration: none; color: var(--primary); font-weight: bold; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
 
         .container { max-width: 1200px; margin: auto; padding: 15px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 15px; }
-        .category-card { background: white; border-radius: 12px; padding: 18px; border-top: 5px solid var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .category-card { background: white; border-radius: 12px; padding: 18px; border-top: 5px solid var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+        .category-card:hover { transform: translateY(-5px); }
+        
         .group-title { color: var(--secondary); font-size: 1.2rem; font-weight: bold; margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         
         .btn-container { display: flex; flex-wrap: wrap; gap: 8px; }
-        .service-btn { text-decoration: none; background: #f8f9fa; color: var(--primary); padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; border: 1px solid #dee2e6; transition: 0.3s; flex: 1 1 45%; text-align: center; cursor: pointer; }
-        .service-btn:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+        .service-btn { text-decoration: none; background: #f8f9fa; color: var(--primary); padding: 10px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; border: 1px solid #dee2e6; transition: 0.3s; flex: 1 1 45%; text-align: center; }
+        .service-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+        
+        /* विशेष सरकारी नौकरी बटन स्टाइल */
+        .job-card { border-top-color: #eb2f06; }
+        .job-btn { background: #fff5f5; border-color: #feb2b2; color: #eb2f06; }
+        .job-btn:hover { background: #eb2f06; color: white; }
 
         .important-note { background: #fff5f5; border-left: 4px solid #e74c3c; padding: 10px; margin-top: 15px; font-size: 0.82rem; color: #c0392b; border-radius: 4px; font-weight: 600; }
 
-        /* --- POPUP SYSTEM --- */
-        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); }
-        .modal-content { background: #fff; margin: 1% auto; width: 95%; max-width: 880px; border-radius: 10px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .modal-header { background: var(--secondary); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
-        
-        .job-grid { display: grid; grid-template-columns: repeat(3, 1fr); background: #eee; gap: 1px; }
-        .job-col { background: #fff; padding: 10px; min-height: 400px; }
-        .col-head { background: #f1f1f1; text-align: center; padding: 5px; font-weight: bold; color: var(--secondary); border-bottom: 2px solid var(--secondary); margin-bottom: 10px; font-size: 0.9rem; }
-        .job-link { display: block; padding: 8px 5px; border-bottom: 1px solid #f0f0f0; color: #0000ff; text-decoration: none; font-size: 0.85rem; font-weight: 500; cursor: pointer; }
-
-        /* Detail View Layer 3 */
-        #job-detail-section { display: none; padding: 20px; background: #fff; max-height: 85vh; overflow-y: auto; }
-        .sr-table { width: 100%; border-collapse: collapse; border: 1px solid #000; margin-bottom: 15px; }
-        .sr-table th { background: #ff0000; color: white; padding: 10px; text-align: center; border: 1px solid #000; font-size: 1.1rem; }
-        .sr-table td { border: 1px solid #000; padding: 10px; vertical-align: top; font-size: 0.85rem; }
-        .red-lbl { color: #ff0000; font-weight: bold; text-decoration: underline; display: block; margin-bottom: 5px; }
-        
-        .sub-table { width: 100%; border-collapse: collapse; text-align: center; margin-top: 5px; }
-        .sub-table th, .sub-table td { border: 1px solid #ccc; padding: 6px; font-size: 0.8rem; }
-        .sub-table th { background: #f8f9fa; color: #333; }
-
-        /* Centered 5 Buttons */
-        .btn-group-center { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; margin: 20px auto; padding: 15px; background: #f1f3f5; border-radius: 10px; }
-        .act-link { text-decoration: none; padding: 10px 15px; border-radius: 5px; font-weight: bold; color: white; font-size: 0.85rem; text-align: center; min-width: 140px; }
-        .b-apply { background: #27ae60; } .b-admit { background: #2980b9; } .b-res { background: #8e44ad; } .b-pdf { background: #e67e22; } .b-web { background: #34495e; }
-        .back-btn { background: #555; color: white; border: none; padding: 6px 15px; border-radius: 4px; cursor: pointer; margin-bottom: 10px; }
-
-        footer { background: #1e272e; color: white; padding: 20px; text-align: center; margin-top: 30px; font-size: 0.9rem; }
-        @media (max-width: 768px) { .job-grid { grid-template-columns: 1fr; } .act-link { width: 100%; } }
+        footer { background: #1e272e; color: white; padding: 25px; text-align: center; margin-top: 40px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -70,141 +46,92 @@
 
 <div class="contact-box">
     <a href="tel:7300789906" class="contact-item"><i class="fas fa-phone"></i> 7300789906</a>
-    <a href="https://wa.me/917300789906" target="_blank" class="contact-item" style="color:#25D366;"><i class="fab fa-whatsapp"></i> व्हाट्सएप</a>
-    <a href="https://maps.app.goo.gl/tbtZNmKkEEBWKjU36" target="_blank" class="contact-item" style="color:#db4437;"><i class="fas fa-map-marker-alt"></i> लोकेशन</a>
+    <a href="https://wa.me/917300789906" target="_blank" class="contact-item" style="color:#25D366;"><i class="fab fa-whatsapp"></i> व्हाट्सएप संपर्क</a>
+    <a href="#" target="_blank" class="contact-item" style="color:#db4437;"><i class="fas fa-map-marker-alt"></i> शॉप लोकेशन</a>
 </div>
 
 <div class="container">
-    <div class="grid" id="service-grid"></div>
-</div>
-
-<div id="jobModal" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span>🚀 CSC सरकारी नौकरी अपडेट्स (SarkariResult Style)</span>
-            <span style="cursor:pointer; font-size:24px;" onclick="closePopup()">×</span>
+    <div class="grid" id="main-grid">
         </div>
-        <div id="job-list-view" class="job-grid">
-            <div class="job-col"><div class="col-head">RESULT</div><div id="res-col"></div></div>
-            <div class="job-col"><div class="col-head">ADMIT CARD</div><div id="adm-col"></div></div>
-            <div class="job-col"><div class="col-head">LATEST JOBS</div><div id="job-col"></div></div>
-        </div>
-        <div id="job-detail-section">
-            <button class="back-btn" onclick="backToList()">⬅️ वापस लिस्ट देखें</button>
-            <div id="detail-content"></div>
-        </div>
-    </div>
 </div>
 
 <footer>
-    <p>© 2025 सिरोही जन सेवा केंद्र | CSC सरकारी नौकरी Saidpur | डिजिटल इंडिया</p>
+    <p>© 2026 सिरोही जन सेवा केंद्र | CSC सरकारी नौकरी Saidpur | All Rights Reserved</p>
 </footer>
 
 <script>
-// ==========================================
-// यहाँ अपनी सेवाओं के लिंक '###' की जगह बदलें
-// ==========================================
+// 1. सामान्य सेवा लिंक
 const serviceLinks = {
     "आय प्रमाण पत्र": "https://ascomputers078-glitch.github.io/E-DISTRICT/",
     "जाति प्रमाण पत्र": "https://ascomputers078-glitch.github.io/E-DISTRICT/",
     "निवास प्रमाण पत्र": "https://ascomputers078-glitch.github.io/E-DISTRICT/",
     "महिला जाति": "https://ascomputers078-glitch.github.io/E-DISTRICT/",
-    "पैन कार्ड": "https://eportal.incometax.gov.in/iec/foservices/#/pre-login/link-aadhaar-status",
-    "आधार अपडेट": "https://myaadhaar.uidai.gov.in/verifyAadhaar",
+    "पैन कार्ड": "https://eportal.incometax.gov.in/",
+    "आधार अपडेट": "https://myaadhaar.uidai.gov.in/",
     "वोटर आईडी": "https://voters.eci.gov.in/",
     "आयुष्मान कार्ड": "https://beneficiary.nha.gov.in/",
-    "राशन कार्ड": "###",
-    "खतौनी नकल": "https://upbhulekh.gov.in/#/home",
-    "बिजली बिल": "https://consumer.uppcl.org/wss/pay_bill_home",
-    "ड्राइविंग लाइसेंस": "https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do"
+    "राशन कार्ड": "https://fcs.up.gov.in/",
+    "खतौनी नकल": "https://upbhulekh.gov.in/",
+    "बिजली बिल": "https://consumer.uppcl.org/",
+    "ड्राइविंग लाइसेंस": "https://sarathi.parivahan.gov.in/"
 };
 
-// ==========================================
-// जॉब डेटाबेस (ऑटो-फिल्टर और 5-बटन)
-// ==========================================
-const jobDatabase = {
-    "ssc-gd-2025": {
-        title: "SSC GD Constable Recruitment 2025",
-        info: "Staff Selection Commission (CSC सरकारी नौकरी) Recruitment for BSF, CISF, CRPF, SSF.",
-        fees: "Gen/OBC: ₹100 | SC/ST/Female: ₹0",
-        dates: "Last Date: 31/12/2025",
-        age: "18-23 Years",
-        eligibility: "10th Class (High School) Passed in any recognized board.",
-        vacancy: { gen: "12000", obc: "8200", ews: "3000", sc: "5000", st: "2800", total: "31000" },
-        physical: {
-            male: { h: "170 CM", c: "80-85 CM", r: "5 KM in 24 Min" },
-            female: { h: "157 CM", c: "N/A", r: "1.6 KM in 8.5 Min" }
-        },
-        links: { apply: "https://ssc.gov.in/candidate-portal/one-time-registration/home-page", admit: "", result: "", notify: "###", web: "###" }
+// 2. सरकारी नौकरी लिंक (यहाँ अपनी नई वेबसाइट का लिंक डालें)
+const jobLinks = {
+    "लेटेस्ट नौकरी": "https://www.sarkariresult.com/", // अपनी वेबसाइट का लिंक यहाँ बदलें
+    "एडमिट कार्ड": "https://www.sarkariresult.com/admitcard/", 
+    "रिजल्ट": "https://www.sarkariresult.com/result/"
+};
+
+// 3. वेबसाइट स्ट्रक्चर (Sections)
+const dashboardData = [
+    { 
+        title: "सरकारी भर्ती (Sarkari Job)", 
+        icon: "fa-user-graduate", 
+        isJob: true, 
+        services: ["लेटेस्ट नौकरी", "एडमिट कार्ड", "रिजल्ट"] 
+    },
+    { 
+        title: "प्रमाण पत्र सेवाएं", 
+        icon: "fa-file-invoice", 
+        note: "शादीशुदा महिला: मायका रिपोर्ट अनिवार्य है।", 
+        services: ["आय प्रमाण पत्र", "जाति प्रमाण पत्र", "निवास प्रमाण पत्र", "महिला जाति"] 
+    },
+    { 
+        title: "डिजिटल आईडी", 
+        icon: "fa-id-card", 
+        services: ["पैन कार्ड", "आधार अपडेट", "वोटर आईडी", "आयुष्मान कार्ड"] 
+    },
+    { 
+        title: "ऑनलाइन फॉर्म / अन्य", 
+        icon: "fa-laptop", 
+        services: ["राशन कार्ड", "खतौनी नकल", "बिजली बिल", "ड्राइविंग लाइसेंस"] 
     }
-};
-
-const servicesDB = [
-    { title: "प्रमाण पत्र", icon: "fa-file-invoice", note: "शादीशुदा महिला: मायका रिपोर्ट अनिवार्य है।", services: ["आय प्रमाण पत्र", "जाति प्रमाण पत्र", "निवास प्रमाण पत्र", "महिला जाति"] },
-    { title: "CSC सरकारी नौकरी", icon: "fa-user-graduate", isJob: true, services: ["लेटेस्ट नौकरी / रिजल्ट / एडमिट कार्ड"] },
-    { title: "डिजिटल आईडी", icon: "fa-id-card", services: ["पैन कार्ड", "आधार अपडेट", "वोटर आईडी", "आयुष्मान कार्ड"] },
-    { title: "अन्य सेवाएं", icon: "fa-laptop", services: ["राशन कार्ड", "खतौनी नकल", "बिजली बिल", "ड्राइविंग लाइसेंस"] }
 ];
 
-const grid = document.getElementById('service-grid');
-servicesDB.forEach(group => {
+// 4. ग्रिड रेंडरिंग इंजन
+const mainGrid = document.getElementById('main-grid');
+
+dashboardData.forEach(section => {
     const card = document.createElement('div');
-    card.className = 'category-card';
-    let btns = group.services.map(name => {
-        let url = serviceLinks[name] || "###";
-        return group.isJob ? `<a onclick="openPopup()" class="service-btn">${name}</a>` : `<a href="${url}" target="_blank" class="service-btn">${name}</a>`;
-    }).join('');
-    card.innerHTML = `<div class="group-title"><i class="fas ${group.icon}"></i> ${group.title}</div><div class="btn-container">${btns}</div>${group.note?`<div class="important-note">⚠️ ${group.note}</div>`:""}`;
-    grid.appendChild(card);
-});
-
-function openPopup() {
-    document.getElementById('job-list-view').style.display = "grid";
-    document.getElementById('job-detail-section').style.display = "none";
-    let jH = "", aH = "", rH = "";
-    for (let key in jobDatabase) {
-        let j = jobDatabase[key];
-        let link = `<a class="job-link" onclick="openJobDetail('${key}')">➤ ${j.title}</a>`;
-        if (j.links.apply) jH += link;
-        if (j.links.admit) aH += link;
-        if (j.links.result) rH += link;
-    }
-    document.getElementById('job-col').innerHTML = jH || "No Jobs";
-    document.getElementById('adm-col').innerHTML = aH || "No Cards";
-    document.getElementById('res-col').innerHTML = rH || "No Results";
-    document.getElementById('jobModal').style.display = "block";
-}
-
-function openJobDetail(key) {
-    const d = jobDatabase[key];
-    document.getElementById('job-list-view').style.display = "none";
-    document.getElementById('job-detail-section').style.display = "block";
+    card.className = section.isJob ? 'category-card job-card' : 'category-card';
     
-    document.getElementById('detail-content').innerHTML = `
-        <table class="sr-table">
-            <tr><th>${d.title}</th></tr>
-            <tr><td><span class="red-lbl">Short Info:</span> ${d.info}</td></tr>
-            <tr><td><span class="red-lbl">Eligibility (योग्यता):</span><p style="padding:10px; background:#f9f9f9; border-left:4px solid #f00; font-weight:600;">${d.eligibility}</p></td></tr>
-            <tr><td><span class="red-lbl">Vacancy Details (Category Wise):</span><table class="sub-table"><tr><th>Gen</th><th>OBC</th><th>EWS</th><th>SC</th><th>ST</th><th>Total</th></tr><tr><td>${d.vacancy.gen}</td><td>${d.vacancy.obc}</td><td>${d.vacancy.ews}</td><td>${d.vacancy.sc}</td><td>${d.vacancy.st}</td><td><b>${d.vacancy.total}</b></td></tr></table></td></tr>
-            <tr><td><span class="red-lbl">Physical (Male/Female):</span><table class="sub-table"><tr><th>Standard</th><th>Male</th><th>Female</th></tr><tr><td>Height</td><td>${d.physical.male.h}</td><td>${d.physical.female.h}</td></tr><tr><td>Chest</td><td>${d.physical.male.c}</td><td>${d.physical.female.c}</td></tr><tr><td>Running</td><td>${d.physical.male.r}</td><td>${d.physical.female.r}</td></tr></table></td></tr>
-        </table>
-        <div class="btn-group-center">
-            ${d.links.apply ? `<a href="${d.links.apply}" target="_blank" class="act-link b-apply">Apply Online</a>`:''}
-            ${d.links.admit ? `<a href="${d.links.admit}" target="_blank" class="act-link b-admit">Admit Card</a>`:''}
-            ${d.links.result ? `<a href="${d.links.result}" target="_blank" class="act-link b-res">Check Result</a>`:''}
-            <a href="${d.links.notify}" target="_blank" class="act-link b-pdf">Notification</a>
-            <a href="${d.links.web}" target="_blank" class="act-link b-web">Official Website</a>
-        </div>
-    `;
-}
+    let buttonsHTML = section.services.map(name => {
+        // अगर सरकारी नौकरी सेक्शन है तो jobLinks से लिंक उठाएगा, वरना serviceLinks से
+        const url = section.isJob ? jobLinks[name] : serviceLinks[name];
+        const btnClass = section.isJob ? 'service-btn job-btn' : 'service-btn';
+        
+        return `<a href="${url || '#'}" target="_blank" class="${btnClass}">${name}</a>`;
+    }).join('');
 
-function backToList() { document.getElementById('job-list-view').style.display = "grid"; document.getElementById('job-detail-section').style.display = "none"; }
-function closePopup() { document.getElementById('jobModal').style.display = "none"; }
+    card.innerHTML = `
+        <div class="group-title"><i class="fas ${section.icon}"></i> ${section.title}</div>
+        <div class="btn-container">${buttonsHTML}</div>
+        ${section.note ? `<div class="important-note">⚠️ ${section.note}</div>` : ""}
+    `;
+    mainGrid.appendChild(card);
+});
 </script>
+
 </body>
 </html>
-
-
-
-
-
